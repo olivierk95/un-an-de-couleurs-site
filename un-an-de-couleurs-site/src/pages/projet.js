@@ -1,8 +1,12 @@
 import React from 'react'
+import Layout from "../components/layout"
+
 
 const ProjectPage = () => {
     return (
-        <div>Projet Page</div>
+        <Layout>
+            <div>Projet Page</div>
+        </Layout>
     )
 }
 

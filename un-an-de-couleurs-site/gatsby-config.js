@@ -5,7 +5,10 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Un an de Couleurs',
+    author: 'Olivier Keutgens',
+  },
   plugins: [
     'gatsby-plugin-sass'
   ],

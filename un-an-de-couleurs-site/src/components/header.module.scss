@@ -1,0 +1,25 @@
+@import "../styles/utils/variables";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-m;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+
+    li {
+        margin-left: $spacing-m;
+        font-family: $font-text;
+
+        a {
+            padding: $spacing-xs;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+    }
+
+}

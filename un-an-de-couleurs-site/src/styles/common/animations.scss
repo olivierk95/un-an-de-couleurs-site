@@ -1,0 +1,105 @@
+//COLOR CYCLE
+
+$color-cycle-anim-attr: 100s linear infinite;
+
+.bg-color-lighter-cycle {
+    animation: bg-color-lighter-cycle $color-cycle-anim-attr;
+}
+
+@keyframes bg-color-lighter-cycle {
+    from {
+        background-color: $color-cycle-1-lighter;
+    }
+    12% {
+        background-color: $color-cycle-2-lighter;
+    }
+    25% {
+        background-color: $color-cycle-3-lighter;
+    }
+    37% {
+        background-color: $color-cycle-4-lighter;
+    }
+    50% {
+        background-color: $color-cycle-5-lighter;
+    }
+    62% {
+        background-color: $color-cycle-6-lighter;
+    }
+    75% {
+        background-color: $color-cycle-7-lighter;
+    }
+    87% {
+        background-color: $color-cycle-8-lighter;
+    }
+    to {
+        background-color: $color-cycle-1-lighter;
+    }
+}
+
+.bg-color-cycle {
+    animation: bg-color-cycle $color-cycle-anim-attr;
+}
+
+@keyframes bg-color-cycle {
+    from {
+        background-color: $color-cycle-1;
+    }
+    12% {
+        background-color: $color-cycle-2;
+    }
+    25% {
+        background-color: $color-cycle-3;
+    }
+    37% {
+        background-color: $color-cycle-4;
+    }
+    50% {
+        background-color: $color-cycle-5;
+    }
+    62% {
+        background-color: $color-cycle-6;
+    }
+    75% {
+        background-color: $color-cycle-7;
+    }
+    87% {
+        background-color: $color-cycle-8;
+    }
+    to {
+        background-color: $color-cycle-1;
+    }
+}
+
+.font-color-cycle:not(.is-active) {
+    animation: font-color-cycle $color-cycle-anim-attr;
+}
+
+@keyframes font-color-cycle {
+    from {
+        color: $color-cycle-1;
+    }
+    12% {
+        color: $color-cycle-2;
+    }
+    25% {
+        color: $color-cycle-3;
+    }
+    37% {
+        color: $color-cycle-4;
+    }
+    50% {
+        color: $color-cycle-5;
+    }
+    62% {
+        color: $color-cycle-6;
+    }
+    75% {
+        color: $color-cycle-7;
+    }
+    87% {
+        color: $color-cycle-8;
+    }
+    to {
+        color: $color-cycle-1;
+    }
+}
