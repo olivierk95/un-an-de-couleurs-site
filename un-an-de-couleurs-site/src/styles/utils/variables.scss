@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded&family=Permanent+Marker&family=Rasa');
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@200;300;400;700;800&family=Permanent+Marker&family=Rasa:wght@400;500;600;700');
 
 //FONT
 $font-primary: 'BioRhyme Expanded', serif;
@@ -6,6 +6,22 @@ $font-secondary: 'Permanent Marker', cursive;
 $font-text: 'Rasa', serif;
 
 //COLORS
+$black: rgb(0, 0, 0);
+$black-transparent-dark: rgba($black, .75);
+$black-transparent-medium: rgba($black, .5);
+$black-transparent-light: rgba($black, .25);
+$gray-darkest: rgb(32, 32, 32);
+$gray-darker: rgb(64, 64, 64);
+$gray-dark: rgb(96, 96, 96);
+$gray-medium: rgb(128, 128, 128);
+$gray-light: rgb(160, 160, 160);
+$gray-lighter: rgb(192, 192, 192);
+$gray-lightest: rgb(224, 224, 224);
+$white: rgb(255, 255, 255);
+$white-transparent-dark: rgba($white, .75);
+$white-transparent-medium: rgba($white, .5);
+$white-transparent-light: rgba($white, .25);
+$transparent: transparent;
 $color-cycle-1: rgb(255, 0, 0);
 $color-cycle-2: rgb(255, 115, 0);
 $color-cycle-3: rgb(255, 230, 0);

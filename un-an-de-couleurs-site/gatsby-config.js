@@ -4,12 +4,23 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: 'Un an de Couleurs',
     author: 'Olivier Keutgens',
   },
   plugins: [
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`
   ],
 }

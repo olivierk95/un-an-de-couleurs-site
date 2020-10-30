@@ -1,3 +1,15 @@
-.layout {
-    fill-opacity: 0.2;
+@import "../styles/vendors/mq";
+@import "../styles/utils/variables";
+
+.containeroutside {
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 $spacing-s;
+
+    @include mq(desktop) {
+        max-width: 1000px;
+    }
 }

@@ -8,11 +8,13 @@ import layoutStyles from "./layout.module.scss"
 const Layout = (props) => {
     return (
         <>
-            <div className={layoutStyles.layout + ` bg-color-lighter-cycle`}>
+            <div className="bg-color-lighter-cycle">
                 <Header></Header>
-                <body>
-                    {props.children}
-                </body>
+                <div className={layoutStyles.containeroutside}>
+                    <div className={layoutStyles.container}>
+                        {props.children}
+                    </div>
+                </div>
             </div>
             <Footer></Footer>
         </>

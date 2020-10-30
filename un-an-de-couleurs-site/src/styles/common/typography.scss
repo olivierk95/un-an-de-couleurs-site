@@ -2,6 +2,63 @@ p {
     font-family: $font-text;
 }
 
-a.is-active {
-    color: black;
+b, strong {
+    font-weight: 700;
 }
+
+header a {
+
+    &.is-active {
+        color: $black-transparent-medium;
+    }
+
+    &:not(.is-active):hover {
+        color: $black !important;
+    }
+}
+
+.h2-title {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+
+    @include mq(tablet) {
+        font-size: 22px;
+    }
+
+    @include mq(desktop) {
+        font-size: 25px;
+    }
+}
+
+.h3-title {
+    font-family: $font-secondary;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+
+    @include mq(tablet) {
+        font-size: 18px;
+    }
+
+    @include mq(desktop) {
+        font-size: 20px;
+    }
+}
+
+.text-normal {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+
+    @include mq(tablet) {
+        font-size: 18px;
+    }
+
+    @include mq(desktop) {
+        font-size: 20px;
+    }
+}
+
