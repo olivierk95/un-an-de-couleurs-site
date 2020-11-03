@@ -1,0 +1,19 @@
+@import "../styles/utils/variables";
+
+.input {
+    border: solid 2px $black;
+    box-sizing: border-box;
+    background: none;
+    padding: $spacing-xs;
+    margin-bottom: $spacing-s;
+    outline: none;
+    width: 100%;
+
+    &:invalid {
+        border-color: $red;
+    }
+
+    &:focus, &:hover {
+        border-color: $blue;
+    }
+}

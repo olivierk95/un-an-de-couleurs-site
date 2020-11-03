@@ -3,14 +3,27 @@
 
 .container {
 
-    @include mq(desktop) {
+    @include mq(tablet) {
         display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    @include mq(desktop) {
         grid-template-columns: 2fr 1fr 1fr;
     }
 }
 
+.sectioncontainer {
+    max-width: 500px;
+    margin: auto;
+}
+
 .projet {
-    padding: $spacing-xxxl $spacing-m $spacing-m;
+    padding: $spacing-xxxl $spacing-s $spacing-xl;
+
+    @include mq(tablet) {
+        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+    }
     
     @include mq(desktop) {
         grid-row: 1 / span 2;
@@ -18,18 +31,51 @@
 }
 
 .sos {
-    border: solid 2px $black;
-    padding: $spacing-xxxl $spacing-m $spacing-m;
+    padding: $spacing-xl $spacing-s;
+    border-top: solid 2px $black;
+
+    @include mq(tablet) {
+        grid-row: 2;
+        grid-column: 1;
+        padding: $spacing-xxl $spacing-m;
+    }
+
+    @include mq(desktop) {
+        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+        grid-row: 1;
+        grid-column: 2;
+        border-top: none;
+        border-left: solid 2px $black;
+        border-right: solid 2px $black;
+    }
 }
 
 .contact {
-    padding: $spacing-xxxl $spacing-m $spacing-m;
+    padding: $spacing-xl $spacing-s;
+    border-top: solid 2px $black;
+
+    @include mq(tablet) {
+        grid-column: 2;
+        border-top: none;
+        border-left: solid 2px $black;
+        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+    }
+    @include mq(desktop) {
+        grid-column: 3;
+        border-left: none;
+    }
 }
 
 .merci {
-    border-left: solid 2px $black;
     border-top: solid 2px $black;
-    padding: $spacing-m;
+    padding: $spacing-xl $spacing-s;
+
+    @include mq(tablet) {
+        grid-column: 2;
+        grid-row: 2;
+        border-left: solid 2px $black;
+        padding: $spacing-xxl $spacing-m;
+    }
 
     @include mq(desktop) {
         grid-column: 2 / span 2;

@@ -1,6 +1,46 @@
 .content-container {
-    margin: $spacing-xxl 0;
+    margin: $spacing-xl 0 0;
+
+    @include mq(tablet) {
+        margin: $spacing-xxl 0 0;
+    }
 }
 .paragraph-container {
-    padding: $spacing-m 0;
+    padding: $spacing-l 0 0;
+}
+
+.button--outside {
+    display: inline-block;
+    cursor: pointer;
+} 
+
+.button--inside {
+    position: relative;
+    color: $black;
+    font-family: $font-primary;
+    font-weight: 900;
+    padding: $spacing-xs $spacing-m;
+    border: solid 2px $black;
+    background-color: $white;
+    top: -5px;
+    left: 5px;
+    transition: all .3s $ease-in-quad;
+    cursor: pointer;
+
+    &:hover {
+        color: $white;
+        border: solid 2px $transparent;
+        background-color: $transparent;
+        top: 0;
+        left: 0;
+    }
+} 
+
+.icon-link {
+    transition: all .3s $ease-out-quad;
+
+    &:hover {
+        fill: $black !important;
+        transform: scale(1.2);
+    }
 }
