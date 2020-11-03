@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@200;300;400;700;800&family=Permanent+Marker&family=Rasa:wght@400;500;600;700');
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@200;300;400;700;800&family=Vampiro+One&family=BioRhyme:wght@200;300;400;700;800&display=swap');
 
 //FONT
 $font-primary: 'BioRhyme Expanded', serif;
-$font-secondary: 'Permanent Marker', cursive;
-$font-text: 'Rasa', serif;
+$font-secondary: 'Vampiro One', cursive;
+$font-text: 'BioRhyme', serif;
 
 //COLORS
 $black: rgb(0, 0, 0);
@@ -30,14 +30,14 @@ $color-cycle-5: rgb(0, 255, 149);
 $color-cycle-6: rgb(0, 238, 255);
 $color-cycle-7: rgb(0, 26, 255);
 $color-cycle-8: rgb(247, 0, 255);
-$color-cycle-1-lighter: rgba(255, 0, 0, 0.1);
-$color-cycle-2-lighter: rgba(255, 115, 0, 0.1);
-$color-cycle-3-lighter: rgba(255, 251, 0, 0.1);
-$color-cycle-4-lighter: rgba(60, 255, 0, 0.1);
-$color-cycle-5-lighter: rgba(0, 255, 149, 0.1);
-$color-cycle-6-lighter: rgba(0, 238, 255, 0.1);
-$color-cycle-7-lighter: rgba(0, 26, 255, 0.1);
-$color-cycle-8-lighter: rgba(247, 0, 255, 0.1);
+$color-cycle-1-lighter: rgb(255,230,230);
+$color-cycle-2-lighter: rgb(255,241,230);
+$color-cycle-3-lighter: rgb(255,253,230);
+$color-cycle-4-lighter: rgb(236,255,230);
+$color-cycle-5-lighter: rgb(230,255,244);
+$color-cycle-6-lighter: rgb(230,253,255);
+$color-cycle-7-lighter: rgb(230,232,255);
+$color-cycle-8-lighter: rgb(254,230,255);
 
 //SPACING
 $spacing-xs: 5px;
@@ -45,8 +45,8 @@ $spacing-s: 10px;
 $spacing-m: 20px;
 $spacing-l: 40px;
 $spacing-xl: 80px;
-$spacing-xxl: 200px;
-$spacing-xxxl: 400px;
+$spacing-xxl: 120px;
+$spacing-xxxl: 180px;
 
 //EASE
 $linear: cubic-bezier(.250, .250, .750, .750);

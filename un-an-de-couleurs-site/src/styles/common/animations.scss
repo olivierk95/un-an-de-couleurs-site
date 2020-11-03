@@ -103,3 +103,37 @@ $color-cycle-anim-attr: 100s linear infinite;
         color: $color-cycle-1;
     }
 }
+
+.fill-color-cycle {
+    animation: fill-color-cycle $color-cycle-anim-attr;
+}
+
+@keyframes fill-color-cycle {
+    from {
+        fill: $color-cycle-1;
+    }
+    12% {
+        fill: $color-cycle-2;
+    }
+    25% {
+        fill: $color-cycle-3;
+    }
+    37% {
+        fill: $color-cycle-4;
+    }
+    50% {
+        fill: $color-cycle-5;
+    }
+    62% {
+        fill: $color-cycle-6;
+    }
+    75% {
+        fill: $color-cycle-7;
+    }
+    87% {
+        fill: $color-cycle-8;
+    }
+    to {
+        fill: $color-cycle-1;
+    }
+}

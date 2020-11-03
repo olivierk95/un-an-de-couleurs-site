@@ -17,6 +17,21 @@ header a {
     }
 }
 
+.h1-title {
+    font-family: $font-secondary;
+    font-size: 30px;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+
+    @include mq(tablet) {
+        font-size: 40px;
+    }
+
+    @include mq(desktop) {
+        font-size: 50px;
+    } 
+}
+
 .h2-title {
     font-family: $font-primary;
     font-size: 20px;
@@ -49,16 +64,16 @@ header a {
 }
 
 .text-normal {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.25;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
 
     @include mq(tablet) {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     @include mq(desktop) {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 

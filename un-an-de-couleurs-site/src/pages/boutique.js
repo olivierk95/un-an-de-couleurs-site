@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 
-const IndexPage = () => {
+const BoutiquePage = () => {
   return (
     <Layout>
       <h1 className="font-color-cycle">Hello</h1>
@@ -9,4 +9,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default BoutiquePage

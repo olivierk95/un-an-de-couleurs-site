@@ -1,0 +1,41 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.container {
+
+    @include mq(desktop) {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+.projet {
+    padding: $spacing-xxxl $spacing-m $spacing-m;
+    
+    @include mq(desktop) {
+        grid-row: 1 / span 2;
+    }
+}
+
+.sos {
+    border: solid 2px $black;
+    padding: $spacing-xxxl $spacing-m $spacing-m;
+}
+
+.contact {
+    padding: $spacing-xxxl $spacing-m $spacing-m;
+}
+
+.merci {
+    border-left: solid 2px $black;
+    border-top: solid 2px $black;
+    padding: $spacing-m;
+
+    @include mq(desktop) {
+        grid-column: 2 / span 2;
+    }
+}
+
+.image {
+    border-radius: 50%;
+}

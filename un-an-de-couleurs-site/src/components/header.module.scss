@@ -1,17 +1,82 @@
 @import "../styles/utils/variables";
+@import "../styles/vendors/mq";
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: $spacing-m;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
 }
 
-.list {
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    border-bottom: solid 2px $black;
+}
+
+.logo {
+    position: relative;
+    justify-self: start;
+    padding: $spacing-s;
+    margin: 0 $spacing-m;
+}
+
+.logolink {
+    animation: spin 50s linear infinite;
+    position: absolute;
+    top: 0;
+
+    svg {
+        max-width: 75px;
+        max-height: 75px;
+
+        @include mq(tablet) {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        @include mq(desktop) {
+            max-width: 120px;
+            max-height: 120px;
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.signature {
+    justify-self: center;
+    align-self: end;
+    font-family: $font-secondary;
+    font-size: 13px;
+
+    @include mq(tablet) {
+        font-size: 14px;
+    }
+
+    @include mq(desktop) {
+        font-size: 16px;
+    }
+}
+
+.nav {
+    justify-self: end;
+}
+
+.navlist {
     list-style: none;
     display: flex;
 
     li {
-        margin-left: $spacing-m;
+        margin: $spacing-m;
         font-family: $font-text;
 
         a {
