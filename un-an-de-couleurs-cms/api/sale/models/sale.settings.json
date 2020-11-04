@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales",
+  "info": {
+    "name": "sale",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "information": {
+      "type": "component",
+      "repeatable": false,
+      "component": "information.artpiece-info"
+    },
+    "boutique_cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "slider": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "pricing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pricing.artpiece-price",
+      "required": true
+    }
+  }
+}

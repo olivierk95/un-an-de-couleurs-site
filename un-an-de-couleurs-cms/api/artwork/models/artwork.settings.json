@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artworks",
+  "info": {
+    "name": "artwork",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "day": {
+      "type": "integer",
+      "default": -5,
+      "unique": true,
+      "required": true,
+      "min": 1
+    },
+    "galerie_cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "boutique_cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "slider": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "cover_height": {
+      "type": "integer",
+      "required": true,
+      "max": 2,
+      "min": 1
+    },
+    "cover_width": {
+      "type": "biginteger",
+      "required": true,
+      "max": "2",
+      "min": "1"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "acquerir",
+        "adjuge",
+        "emprunte",
+        "commande",
+        "none"
+      ],
+      "default": "none",
+      "required": true
+    },
+    "information": {
+      "type": "component",
+      "repeatable": false,
+      "component": "information.artpiece-info",
+      "required": true
+    },
+    "pricing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pricing.artpiece-price"
+    }
+  }
+}

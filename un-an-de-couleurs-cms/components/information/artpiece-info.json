@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_information_artpiece_infos",
+  "info": {
+    "name": "artpiece_info",
+    "icon": "file-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "support": {
+      "type": "string",
+      "required": true
+    },
+    "technique": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
