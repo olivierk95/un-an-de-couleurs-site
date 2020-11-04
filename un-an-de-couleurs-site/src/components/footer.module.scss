@@ -1,0 +1,135 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.container {
+    background-color: $black;
+
+    @include mq(tablet) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    @include mq(desktop) {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+.divcontainer {
+    max-width: 500px;
+    margin: auto;
+}
+
+.footertext {
+    font-family: $font-text;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: $white;
+    text-align: center;
+
+    @include mq(tablet) {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    @include mq(desktop) {
+        font-size: 15px;
+    }
+}
+
+.subtitle {
+    font-family: $font-secondary;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: $spacing-s;
+    color: $white;
+    text-align: center;
+
+    @include mq(tablet) {
+        font-size: 17px;
+        text-align: left;
+    }
+
+    @include mq(desktop) {
+        font-size: 18px;
+    }
+}
+
+.summary {
+    padding: $spacing-l $spacing-m;
+    align-self: center;
+
+    @include mq(tablet) {
+        grid-row: 1 / span 2;
+    }
+
+    @include mq(desktop) {
+        padding: $spacing-xl $spacing-m;
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
+
+.social {
+    padding: $spacing-l $spacing-m;
+    border-top: solid 2px $white;
+
+    @include mq(tablet) {
+        border-left: solid 2px $white;
+        border-top: none;
+    }
+
+    @include mq(desktop) {
+        padding: $spacing-xl $spacing-m;
+        border-right: solid 2px $white;
+    }
+}
+
+.link {
+    display: block;
+    text-align: center;
+
+    @include mq(tablet) {
+        display: inline;
+    }
+}
+
+.icon {
+    fill: $white;
+    transition: all .3s $ease-out-quad;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.contact {
+    padding: $spacing-l $spacing-m;
+    border-top: solid 2px $white;
+
+    @include mq(tablet) {
+        border-left: solid 2px $white;
+    }
+
+    @include mq(desktop) {
+        padding: $spacing-xl $spacing-m;
+        border-left: none;
+        border-top: none;
+    }
+}
+
+.copyright {
+    padding: $spacing-xs;
+    font-family: $font-text;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+
+    @include mq(tablet) {
+        font-size: 13px;
+    }
+
+    @include mq(desktop) {
+        font-size: 14px;
+    }
+}

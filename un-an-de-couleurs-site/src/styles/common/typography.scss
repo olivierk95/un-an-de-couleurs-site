@@ -19,12 +19,14 @@ header a {
 
 .h1-title {
     font-family: $font-secondary;
-    font-size: 35px;
+    font-size: 40px;
     line-height: 1.5;
     margin-bottom: $spacing-m;
+    text-align: center;
 
     @include mq(tablet) {
-        font-size: 40px;
+        font-size: 45px;
+        text-align: left;
     }
 
     @include mq(desktop) {

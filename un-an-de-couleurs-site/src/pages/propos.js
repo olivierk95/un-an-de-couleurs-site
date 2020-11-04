@@ -101,7 +101,7 @@ const ProposPage = () => {
                         <ContactForms />
                         <div className="paragraph-container">
                             <h4 className="h3-title">Espionnez-moi</h4> 
-                            <a href="https://www.instagram.com/organik.artist/" target="_blank" rel="noreferrer"><InstagramIcon /></a>
+                            <a href="https://www.instagram.com/organik.artist/" target="_blank" rel="noreferrer"><InstagramIcon className={proposStyles.icon + ` fill-color-cycle icon-link`} /></a>
                         </div>
                     </div>
                 </section>
