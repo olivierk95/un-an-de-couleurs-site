@@ -19,24 +19,6 @@
     margin: auto;
 }
 
-.footertext {
-    font-family: $font-text;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.4;
-    color: $white;
-    text-align: center;
-
-    @include mq(tablet) {
-        font-size: 14px;
-        text-align: left;
-    }
-
-    @include mq(desktop) {
-        font-size: 15px;
-    }
-}
-
 .subtitle {
     font-family: $font-secondary;
     font-size: 16px;
