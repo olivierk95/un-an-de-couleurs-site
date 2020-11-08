@@ -1,0 +1,15 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.ul {
+    margin: $spacing-s;
+
+    @include mq(tablet) {
+        display: none;
+    }
+}
+
+.li {
+    margin: 0 0 $spacing-s;
+    border: solid 5px $white;
+}

@@ -1,0 +1,31 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.body {
+    min-height: 100vh;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    padding: $spacing-s;
+
+    @include mq(tablet) {
+        top: 0;
+        left: 0;
+        bottom: unset;
+        right: unset;
+        border-right: 2px solid $white;
+        border-bottom: 2px solid $white;
+    }
+}
+
+.title {
+    width: 100%;
+    padding-top: $spacing-l;
+    text-align: center;
+    color: $white;
+}

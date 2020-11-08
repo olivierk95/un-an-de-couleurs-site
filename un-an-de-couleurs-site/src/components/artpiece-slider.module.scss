@@ -1,0 +1,11 @@
+@import "../styles/vendors/mq";
+
+.container {
+    display: none;
+
+    @include mq(tablet) {
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}

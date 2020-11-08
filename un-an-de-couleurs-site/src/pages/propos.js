@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from "../components/layout"
+import Layout from "../templates/layout"
 import {graphql, useStaticQuery} from "gatsby"
 import Img from "gatsby-image"
 import ContactForms from "../components/contact-forms"
