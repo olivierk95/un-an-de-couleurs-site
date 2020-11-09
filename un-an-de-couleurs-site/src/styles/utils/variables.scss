@@ -41,7 +41,7 @@ $color-cycle-6-lighter: rgb(230,253,255);
 $color-cycle-7-lighter: rgb(230,232,255);
 $color-cycle-8-lighter: rgb(254,230,255);
 
-//SPACING
+//SPACINGS
 $spacing-xs: 5px;
 $spacing-s: 10px;
 $spacing-m: 20px;
@@ -50,7 +50,11 @@ $spacing-xl: 80px;
 $spacing-xxl: 120px;
 $spacing-xxxl: 180px;
 
-//EASE
+//BORDERS
+$border-normal: solid 2px $black;
+$border-normal--white: solid 2px $white;
+
+//EASES
 $linear: cubic-bezier(.250, .250, .750, .750);
 
 $ease: cubic-bezier(.250, .100, .250, 1);

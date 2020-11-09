@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import artpieceStyles from "./artpiece.module.scss"
 import ArrowsNav from "../components/arrows-nav"
 import ArtpieceSlider from "../components/artpiece-slider"
@@ -15,6 +15,11 @@ const Artpiece = ( {data} ) => {
     return (
         <div className={artpieceStyles.body} style={{backgroundColor: data.artpiece.information.color_primary}}>
             <ArrowsNav previous={previousPageDay} next={nextPageDay} style={artpieceStyles.navigation}  bgColor={data.artpiece.information.color_primary} />
+            <Link to="/" className={artpieceStyles.quit}>
+                <div className={artpieceStyles.button} style={{backgroundColor: data.artpiece.information.color_primary}}>
+                    <p className={artpieceStyles.cross}>X</p>
+                </div>
+            </Link>
             <section> 
                 <div className={artpieceStyles.title}>
                     <h1 className="h3-title">{data.artpiece.information.title}</h1>
@@ -26,13 +31,22 @@ const Artpiece = ( {data} ) => {
                     }
                 </div>
                 <div className={artpieceStyles.content}>
-                    <ArtpieceSlider />
+                    <ArtpieceSlider
+                        galeriePic={data.artpiece.galerie_cover}
+                        boutiquePic={data.artpiece.boutique_cover}
+                        sliderPics={data.artpiece.slider}
+                    />
                     <ArtpieceImages 
                         galeriePic={data.artpiece.galerie_cover}
                         boutiquePic={data.artpiece.boutique_cover}
                         sliderPics={data.artpiece.slider}
                     />
-                    <ArtpieceInfo />
+                    <ArtpieceInfo 
+                        support={data.artpiece.information.support}
+                        technique={data.artpiece.information.technique}
+                        description={data.artpiece.information.description}
+                        status={data.artpiece.status}
+                    />
                 </div>
             </section>      
         </div>

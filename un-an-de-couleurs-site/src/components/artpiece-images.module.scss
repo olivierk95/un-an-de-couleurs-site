@@ -2,7 +2,7 @@
 @import "../styles/vendors/mq";
 
 .ul {
-    margin: $spacing-s;
+    padding: $spacing-m $spacing-s $spacing-l;
 
     @include mq(tablet) {
         display: none;

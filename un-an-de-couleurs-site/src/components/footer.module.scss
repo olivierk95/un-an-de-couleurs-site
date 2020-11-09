@@ -54,16 +54,16 @@
 
 .social {
     padding: $spacing-l $spacing-m;
-    border-top: solid 2px $white;
+    border-top: $border-normal--white;
 
     @include mq(tablet) {
-        border-left: solid 2px $white;
+        border-left: $border-normal--white;
         border-top: none;
     }
 
     @include mq(desktop) {
         padding: $spacing-xl $spacing-m;
-        border-right: solid 2px $white;
+        border-right: $border-normal--white;
     }
 }
 
@@ -87,10 +87,10 @@
 
 .contact {
     padding: $spacing-l $spacing-m;
-    border-top: solid 2px $white;
+    border-top: $border-normal--white;
 
     @include mq(tablet) {
-        border-left: solid 2px $white;
+        border-left: $border-normal--white;
     }
 
     @include mq(desktop) {

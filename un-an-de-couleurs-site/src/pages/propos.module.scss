@@ -31,7 +31,7 @@
 
 .sos {
     padding: $spacing-xl $spacing-s;
-    border-top: solid 2px $black;
+    border-top: $border-normal;
 
     @include mq(tablet) {
         grid-row: 2;
@@ -44,19 +44,19 @@
         grid-row: 1;
         grid-column: 2;
         border-top: none;
-        border-left: solid 2px $black;
-        border-right: solid 2px $black;
+        border-left: $border-normal;
+        border-right: $border-normal;
     }
 }
 
 .contact {
     padding: $spacing-xl $spacing-s;
-    border-top: solid 2px $black;
+    border-top: $border-normal;
 
     @include mq(tablet) {
         grid-column: 2;
         border-top: none;
-        border-left: solid 2px $black;
+        border-left: $border-normal;
         padding: $spacing-xxxl $spacing-m $spacing-xxl;
     }
     @include mq(desktop) {
@@ -75,13 +75,13 @@
 }
 
 .merci {
-    border-top: solid 2px $black;
+    border-top: $border-normal;
     padding: $spacing-xl $spacing-s;
 
     @include mq(tablet) {
         grid-column: 2;
         grid-row: 2;
-        border-left: solid 2px $black;
+        border-left: $border-normal;
         padding: $spacing-xxl $spacing-m;
     }
 

@@ -14,13 +14,17 @@
     cursor: pointer;
 } 
 
+.button-link {
+    text-decoration: none;
+}
+
 .button--inside {
     position: relative;
     color: $black;
     font-family: $font-primary;
     font-weight: 900;
     padding: $spacing-xs $spacing-m;
-    border: solid 2px $black;
+    border: $border-normal;
     background-color: $white;
     top: -5px;
     left: 5px;

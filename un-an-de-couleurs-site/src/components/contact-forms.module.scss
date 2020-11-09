@@ -1,7 +1,7 @@
 @import "../styles/utils/variables";
 
 .input {
-    border: solid 2px $black;
+    border: $border-normal;
     box-sizing: border-box;
     background: none;
     padding: $spacing-xs;

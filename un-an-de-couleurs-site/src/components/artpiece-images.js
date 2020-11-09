@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 import artpieceImagesStyles from "./artpiece-images.module.scss"
 
 const ArtpieceImages = (props) => {
-    console.log(props.sliderPics)
 
     return (
         <ul className={artpieceImagesStyles.ul}>

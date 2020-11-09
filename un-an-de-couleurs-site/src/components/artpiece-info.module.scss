@@ -1,0 +1,89 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.container {
+    display: grid;
+    border-top: $border-normal--white;
+    padding: $spacing-l $spacing-s;
+    justify-items: center;
+
+    @include mq(tablet) {
+        grid-template-columns: 2fr 1fr;
+        padding: $spacing-l $spacing-m;
+    }
+
+    @include mq(desktop) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.element {
+    max-width: 500px;
+    padding: $spacing-m 0;
+
+    @include mq(tablet) {
+        padding: 0 $spacing-m;
+    }
+}
+
+.characteristicscontainer {
+    width: 100%;
+    margin: 0 auto;
+
+    @include mq(tablet) {
+        justify-self: start;
+    }
+}
+
+.descriptioncontainer {
+    @include mq(tablet) {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: $spacing-l;
+    }
+
+    @include mq(desktop) {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+    }
+}
+
+.actionscontainer {
+    @include mq(tablet) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    @include mq(desktop) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+}
+
+.description {
+    color: $white;
+}
+
+.status {
+    color: $white;
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
+.cta {
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
+.divider {
+    @include mq(tablet) {
+        display: none;
+    }
+}
