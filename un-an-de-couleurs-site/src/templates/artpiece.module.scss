@@ -17,13 +17,6 @@
     z-index: 100;
     display: flex;
     padding: $spacing-s;
-
-    @include mq(tablet) {
-        top: 0;
-        left: 0;
-        bottom: unset;
-        right: unset;
-    }
 }
 
 .quit {
@@ -73,6 +66,19 @@
     color: $white;
 
     @include mq(tablet) {
-        padding-top: $spacing-l;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        text-align: left;
+        padding: $spacing-m;
+        width: auto;
+        max-width: 12.5vw;
+    }
+}
+
+.divider {
+    @include mq(tablet) {
+        margin-left: 0;
     }
 }

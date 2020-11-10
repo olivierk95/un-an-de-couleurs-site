@@ -61,6 +61,16 @@
     }
 }
 
+.date{
+    padding-bottom: $spacing-m;
+    color: $white;
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
 .description {
     color: $white;
 }

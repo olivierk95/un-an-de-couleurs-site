@@ -17,8 +17,8 @@ const ArtpieceImages = (props) => {
                     <Img fluid={props.boutiquePic.childImageSharp.fluid} />               
                 </li>
             }
-            {props.sliderPics && props.sliderPics.map((sliderPic) =>
-                    <li className={artpieceImagesStyles.li}>
+            {props.sliderPics && props.sliderPics.map((sliderPic, i) =>
+                    <li key={sliderPic + i} className={artpieceImagesStyles.li}>
                         <Img fluid={sliderPic.localFile.childImageSharp.fluid} />               
                     </li>
                 ) 

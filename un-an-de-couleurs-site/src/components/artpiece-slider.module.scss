@@ -1,4 +1,5 @@
 @import "../styles/vendors/mq";
+@import "../styles/utils/variables";
 
 .container {
     display: none;
@@ -7,16 +8,68 @@
         display: block;
         position: relative;
         margin: 0 auto;
+        padding: $spacing-l 0 0;
         overflow: hidden;
+        width: 100vw;
     }
 }
 
 .content {
-    width: 100%;
-    height: 100%;
     display: flex;
 }
 
 .slide {
-    max-width: 66%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    height: 75vh;
+    width: 75vw;
+    cursor: pointer;
+    filter: drop-shadow(0 -10px 0 $white)
+        drop-shadow(0 10px 0 $white)
+        drop-shadow(10px 0 0 $white)
+        drop-shadow(-10px 0 0 $white);
+
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 30px;
+    color: $white;
+    transition: .3s $ease-in-quad;
+    cursor: pointer;
+    padding: $spacing-m;
+
+    &:hover {
+        color: $black;
+        transform: scale(1.2);
+    }
+}
+
+.dotsnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    padding:$spacing-xs;
+    margin: 0 $spacing-xs;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .3s $ease-in-quad;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }

@@ -8,24 +8,24 @@ import ArtpieceInfo from "../components/artpiece-info"
 
 const Artpiece = ( {data} ) => {
 
-    const currentPageIndex = data.pages.nodes.findIndex(x => x.day == data.artpiece.day);
+    const currentPageIndex = data.pages.nodes.findIndex(x => x.day === data.artpiece.day);
     const previousPageDay = currentPageIndex === 0 ? false : data.pages.nodes[currentPageIndex - 1].day;
     const nextPageDay = currentPageIndex === data.pages.nodes.length - 1 ? false : data.pages.nodes[currentPageIndex + 1].day;
     
     return (
         <div className={artpieceStyles.body} style={{backgroundColor: data.artpiece.information.color_primary}}>
-            <ArrowsNav previous={previousPageDay} next={nextPageDay} style={artpieceStyles.navigation}  bgColor={data.artpiece.information.color_primary} />
             <Link to="/" className={artpieceStyles.quit}>
                 <div className={artpieceStyles.button} style={{backgroundColor: data.artpiece.information.color_primary}}>
                     <p className={artpieceStyles.cross}>X</p>
                 </div>
             </Link>
+            <ArrowsNav previous={previousPageDay} next={nextPageDay} style={artpieceStyles.navigation}  bgColor={data.artpiece.information.color_primary} />
             <section> 
                 <div className={artpieceStyles.title}>
                     <h1 className="h3-title">{data.artpiece.information.title}</h1>
                     {data.artpiece.day &&
                         <>
-                            <hr className="info__divider"/>
+                            <hr className={`info__divider ${artpieceStyles.divider}`}/>
                             <h2 className="h4-title">{`Jour ${data.artpiece.day}`}</h2>
                         </>
                     }
@@ -46,6 +46,7 @@ const Artpiece = ( {data} ) => {
                         technique={data.artpiece.information.technique}
                         description={data.artpiece.information.description}
                         status={data.artpiece.status}
+                        date={data.artpiece.information.date}
                     />
                 </div>
             </section>      
@@ -66,6 +67,7 @@ export const pageQuery = graphql`
                 support
                 description
                 color_primary
+                date
             }
             galerie_cover {
                 childImageSharp {

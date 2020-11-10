@@ -26,8 +26,11 @@ const ArtpieceInfo = (props) => {
     return (
         <div className={artpieceInfoStyles.container}>
             <div className={`${artpieceInfoStyles.element} ${artpieceInfoStyles.characteristicscontainer}`}>
-                <p className="text-small">{props.support}</p>
-                <p className="text-small">{props.technique}</p>
+                <p className={`text-normal ${artpieceInfoStyles.date}`}>{props.date}</p>
+                <div>
+                    <p className="text-small">{props.support}</p>
+                    <p className="text-small">{props.technique}</p>
+                </div>
             </div>
             <hr className={`info__divider ${artpieceInfoStyles.divider}`}/>
             {props.description &&
