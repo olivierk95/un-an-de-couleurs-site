@@ -13,7 +13,7 @@ const IndexPage = () => {
             cover_height
             galerie_cover {
               childImageSharp {
-                fluid {
+                fluid(maxHeight: 1000, maxWidth: 1000) {
                   ...GatsbyImageSharpFluid
                 }
               }

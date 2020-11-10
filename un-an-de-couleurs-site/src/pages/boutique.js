@@ -6,29 +6,52 @@ import Gallery from "../components/gallery"
 const BoutiquePage = () => {
   const data = useStaticQuery(graphql`
       query {
-        covers: allStrapiArtworks(sort: {fields: day, order: DESC}) {
+        sales: allStrapiSales(sort: {fields: information___date, order: DESC}) {
           nodes {
-            day
-            cover_width
-            cover_height
-            galerie_cover {
+            id
+            information {
+              color_primary
+              title
+            }
+            pricing {
+              leasing_price
+              sale_price
+              cost_material
+            }
+            boutique_cover {
               childImageSharp {
-                fluid {
+                fluid(maxHeight: 500, maxWidth: 500) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
+          }
+        }
+        artworks: allStrapiArtworks(filter: {status: {eq: "acquerir"}}, sort: {fields: information___date, order: DESC}) {
+          nodes {
+            id
             information {
-              id
-              title
               color_primary
-              support
-              technique
+              title
+            }
+            pricing {
+              leasing_price
+              sale_price
+              cost_material
+            }
+            boutique_cover {
+              childImageSharp {
+                fluid(maxHeight: 500, maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
       }
   `)
+
+
 
   return (
     <Layout>
