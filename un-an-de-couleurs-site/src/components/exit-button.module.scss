@@ -1,34 +1,36 @@
-@import "../styles/utils/variables";
-@import "../styles/vendors/mq";
+@import "../styles/utils/variables.scss";
 
-.link {
+.quit {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: $spacing-s;
     text-decoration: none;
     color: $white;
     transition: .3s $ease-in-quad;
 
-    &:nth-child(2) {
-        margin-left: $spacing-m;
-    }
-
     &:hover {
         color: $black;
 
-        .arrow {
+        .cross {
             color: $black;
         }
     }
 }
 
-.link__modified {
+.quit__modified {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: $spacing-s;
     text-decoration: none;
     color: $white;
     transition: .3s $ease-in-quad;
 
-    &:nth-child(2) {
-        margin-left: $spacing-m;
-    }
-
     &:hover {
+
         .button {
             background-color: $black !important;
         }
@@ -42,20 +44,16 @@
     height: 50px;
     margin: $spacing-xs;
     transition: .3s $ease-in-quad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.arrow {
+.cross{
     font-family: $font-primary;
     font-weight: 300;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
     color: $white;
     transition: .3s $ease-in-quad;
-}
-
-.linkdesc {
-    font-family: $font-text;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-align: center;
 }

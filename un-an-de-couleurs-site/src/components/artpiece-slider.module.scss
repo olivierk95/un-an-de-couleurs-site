@@ -7,51 +7,37 @@
     @include mq(tablet) {
         display: block;
         position: relative;
-        margin: 0 auto;
-        padding: $spacing-l 0 0;
         overflow: hidden;
-        width: 100vw;
     }
-}
-
-.content {
-    display: flex;
 }
 
 .slide {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .img {
-    height: 75vh;
-    width: 75vw;
     cursor: pointer;
-    filter: drop-shadow(0 -10px 0 $white)
-        drop-shadow(0 10px 0 $white)
-        drop-shadow(10px 0 0 $white)
-        drop-shadow(-10px 0 0 $white);
-
 }
 
 .nav {
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .arrow {
     font-family: $font-primary;
     font-weight: 400;
     font-size: 30px;
-    color: $white;
     transition: .3s $ease-in-quad;
     cursor: pointer;
     padding: $spacing-m;
 
     &:hover {
-        color: $black;
+        color: $black !important;
         transform: scale(1.2);
     }
 }
@@ -63,8 +49,8 @@
 }
 
 .dot {
-    padding:$spacing-xs;
-    margin: 0 $spacing-xs;
+    padding: $spacing-xs;
+    margin: $spacing-xs;
     cursor: pointer;
     border-radius: 50%;
     transition: .3s $ease-in-quad;

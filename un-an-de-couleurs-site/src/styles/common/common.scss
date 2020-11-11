@@ -40,6 +40,12 @@
     }
 }
 
+.divider {
+    width: $spacing-m;
+    border-top: $border-normal--white;
+    margin-bottom: $spacing-m;
+}
+
 .gallery-display {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

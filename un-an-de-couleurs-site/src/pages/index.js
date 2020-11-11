@@ -8,6 +8,7 @@ const IndexPage = () => {
       query {
         covers: allStrapiArtworks(sort: {fields: day, order: DESC}) {
           nodes {
+            id
             day
             cover_width
             cover_height
@@ -19,7 +20,6 @@ const IndexPage = () => {
               }
             }
             information {
-              id
               title
               color_primary
               support

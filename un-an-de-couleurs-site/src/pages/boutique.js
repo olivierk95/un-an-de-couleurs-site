@@ -6,9 +6,10 @@ import Gallery from "../components/gallery"
 const BoutiquePage = () => {
   const data = useStaticQuery(graphql`
       query {
-        sales: allStrapiSales(sort: {fields: information___date, order: DESC}) {
+        sales: allStrapiSales(sort: {fields: created_at, order: DESC}) {
           nodes {
             id
+            created_at
             information {
               color_primary
               title
@@ -27,9 +28,10 @@ const BoutiquePage = () => {
             }
           }
         }
-        artworks: allStrapiArtworks(filter: {status: {eq: "acquerir"}}, sort: {fields: information___date, order: DESC}) {
+        artworks: allStrapiArtworks(filter: {status: {eq: "acquerir"}}, sort: {fields: created_at, order: DESC}) {
           nodes {
             id
+            created_at
             information {
               color_primary
               title
@@ -50,13 +52,20 @@ const BoutiquePage = () => {
         }
       }
   `)
+  
+  let covers = [];
+  covers = data.sales.nodes.concat(data.artworks.nodes)
 
-
+  covers.sort(function(a,b) {
+    let c = new Date(a.created_at);
+    let d = new Date(b.created_at);
+    return d-c;
+  })
 
   return (
     <Layout>
       <section className="gallery-display">
-        <Gallery data={data.covers.nodes}/>
+        <Gallery data={covers}/>
       </section>
     </Layout>
   )

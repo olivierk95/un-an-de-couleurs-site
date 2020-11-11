@@ -3,9 +3,10 @@ import Img from 'gatsby-image'
 
 import artpieceSliderStyles from "./artpiece-slider.module.scss"
 
-const getWidth = () => window.innerWidth
 
 const ArtpieceSlider = (props) => {
+    const getSize = () => props.vertical? window.innerHeight : window.innerWidth;
+
     const slides = []; 
     if (props.galeriePic) {
         slides.push(props.galeriePic.childImageSharp.fluid);
@@ -18,12 +19,12 @@ const ArtpieceSlider = (props) => {
     }
 
     const [ state, setState ] = useState({
-        currentIndex: 0,
+        currentSlide: 0,
         translate: 0,
         transition: 0.45
     })
 
-    const { currentIndex, translate, transition } = state
+    const { currentSlide, translate, transition } = state
 
     const resizeRef = useRef()
 
@@ -45,80 +46,90 @@ const ArtpieceSlider = (props) => {
     const handleResize = () => {
         setState({
             ...state,
-            translate: getWidth() * currentIndex
+            translate: getSize() * currentSlide
         })
     }
 
     const nextSlide = () => {
-        if (currentIndex === slides.length - 1) {
+        if (currentSlide === slides.length - 1) {
             return setState ({
                 ...state,
                 translate: 0,
-                currentIndex: 0
+                currentSlide: 0
             })
         }
         setState({
             ...state,
-            currentIndex: currentIndex + 1,
-            translate: (currentIndex + 1) * getWidth()
+            currentSlide: currentSlide + 1,
+            translate: (currentSlide + 1) * getSize()
         })
     }
 
     const prevSlide = () => {
-        if (currentIndex === 0) {
+        if (currentSlide === 0) {
             return setState ({
                 ...state,
-                translate: (slides.length - 1) * getWidth(),
-                currentIndex: slides.length - 1
+                translate: (slides.length - 1) * getSize(),
+                currentSlide: slides.length - 1
             })
         }
         setState({
             ...state,
-            currentIndex: currentIndex - 1,
-            translate: (currentIndex - 1) * getWidth()
+            currentSlide: currentSlide - 1,
+            translate: (currentSlide - 1) * getSize()
         })
     }
 
     const jumpSlide = (index) => {
-        if (currentIndex > index) {
+        if (currentSlide > index) {
             return setState ({
                 ...state,
-                currentIndex: index,
-                translate: index * getWidth()
+                currentSlide: index,
+                translate: index * getSize()
             })
         }
-        else if (currentIndex < index) {
+        else if (currentSlide < index) {
             return setState ({
                 ...state,
-                currentIndex: index,
-                translate: index * getWidth()
+                currentSlide: index,
+                translate: index * getSize()
             })
         }
     }
 
 
     return (
-        <div className={artpieceSliderStyles.container}>
+        <div className={`${props.css} ${artpieceSliderStyles.container}`}>
             <div className={artpieceSliderStyles.content} 
-                style={{transform: 'translateX(-' + translate + 'px)',
-                    transition: 'transform ease-out ' + transition + 's',
-                    width: (getWidth() * slides.length) + 'px'}}>
+                style={{transform: props.vertical ? `translateY(-${translate}px)` : `translateX(-${translate}px)`,
+                    transition: `transform ease-out ${transition}s`,
+                    width: props.vertical? '100%' : `${(getSize() * slides.length)}px`,
+                    height: props.vertical? `${(getSize() * slides.length)}px` : '100%',
+                    display: props.vertical? 'block': 'flex'}}>
                 {slides.map((slide, i) => (
-                    <div key={slide + i} className={artpieceSliderStyles.slide} onClick={nextSlide}>
-                        <Img fluid={slide} className={artpieceSliderStyles.img} imgStyle={{objectFit: "contain"}} />           
+                    <div key={slide + i} className={artpieceSliderStyles.slide} style={{height: props.vertical? '100vh' : '100%'}} onClick={nextSlide}>
+                        <Img fluid={slide} className={artpieceSliderStyles.img} imgStyle={{objectFit: "contain"}}
+                            style={{
+                                height: props.vertical? '90vh' : '75vh',
+                                width: props.vertical? '100%' : '75vw',
+                                filter: props.modifier? `drop-shadow(0 -10px 0 ${props.color}) drop-shadow(0 10px 0 ${props.color}) drop-shadow(10px 0 0 ${props.color}) drop-shadow(-10px 0 0  ${props.color})` : 'drop-shadow(0 -10px 0 white) drop-shadow(0 10px 0 white) drop-shadow(10px 0 0 white) drop-shadow(-10px 0 0  white)'}} />           
                     </div>
                 ))}
             </div>
-            <div className={artpieceSliderStyles.nav}>
-                <div onClick={prevSlide} className={artpieceSliderStyles.arrow}>
+            <div className={artpieceSliderStyles.nav} 
+                style={{
+                    flexDirection: props.vertical? 'column' : 'row', 
+                    width: props.vertical? 'auto': '100%' ,
+                    height: props.vertical? '100%' : 'auto'}}>
+                <div onClick={prevSlide} className={artpieceSliderStyles.arrow} style={{transform: props.vertical? 'rotate(90deg)' : 'none', color: props.modifier? props.color : 'white'}}>
                     {`<`}
                 </div>
-                <div className={artpieceSliderStyles.dotsnav}>
+                <div className={artpieceSliderStyles.dotsnav} style={{flexDirection: props.vertical? 'column' : 'row'}}>
                     {slides.map((slide, i) => (
-                        <span key={slide + i} onClick={() => jumpSlide(i)} style={{backgroundColor: currentIndex === i? 'black' : 'white'}} className={artpieceSliderStyles.dot}/>
+                        <span key={slide + i} onClick={() => jumpSlide(i)} style={{backgroundColor: props.modifier? (currentSlide === i? 'black' : props.color) : (currentSlide === i? 'black' : 'white')}} className={artpieceSliderStyles.dot}/>
                     ))}
                 </div>
-                <div onClick={nextSlide} className={artpieceSliderStyles.arrow}>
+                <div onClick={nextSlide} className={artpieceSliderStyles.arrow} style={{transform: props.vertical? 'rotate(90deg)' : 'none', color: props.modifier? props.color : 'white'}}>
                     {`>`}
                 </div>
             </div>

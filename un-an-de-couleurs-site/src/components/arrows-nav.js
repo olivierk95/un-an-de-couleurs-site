@@ -6,20 +6,20 @@ import arrowsNavStyles from "./arrows-nav.module.scss"
 const ArrowsNav = (props) => {
     return (
         <div className={props.style}>
-            { props.previous &&
-                <Link to={`/jour-${props.previous}`} className={arrowsNavStyles.link}>
-                    <div className={arrowsNavStyles.button} style={{backgroundColor: props.bgColor}}>
+            { props.previousSlug &&
+                <Link to={props.previousSlug} className={props.modifier? arrowsNavStyles.link__modified : arrowsNavStyles.link }>
+                    <div className={arrowsNavStyles.button} style={{backgroundColor: props.backgroundColor}}>
                         <p className={arrowsNavStyles.arrow}>{`<`}</p>
                     </div>
-                    <p className={arrowsNavStyles.linkdesc}>{`Jour ${props.previous}`}</p>
+                    {props.previous && <p className={arrowsNavStyles.linkdesc}>{props.previous}</p> }
                 </Link>
             }
-            { props.next &&
-                <Link to={`/jour-${props.next}`} className={arrowsNavStyles.link}>
-                    <div className={arrowsNavStyles.button} style={{backgroundColor: props.bgColor}}>
+            { props.nextSlug &&
+                <Link to={props.nextSlug} className={props.modifier? arrowsNavStyles.link__modified : arrowsNavStyles.link }>
+                    <div className={arrowsNavStyles.button} style={{backgroundColor: props.backgroundColor}}>
                         <p className={arrowsNavStyles.arrow}>{`>`}</p>
                     </div>
-                    <p className={arrowsNavStyles.linkdesc}>{`Jour ${props.next}`}</p>
+                    {props.next && <p className={arrowsNavStyles.linkdesc}>{props.next}</p>}
                 </Link>
             }
         </div>

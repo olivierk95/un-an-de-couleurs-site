@@ -4,9 +4,15 @@
 .body {
     min-height: 100vh;
     padding-bottom: $spacing-l;
+    background-color: white;
 
     @include mq(tablet) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
         padding-bottom: 0;
+    }
+    @include mq(desktop) {
+        grid-template-columns: 3fr 1fr;
     }
 }
 
@@ -17,52 +23,45 @@
     z-index: 100;
     display: flex;
     padding: $spacing-s;
-}
-
-.title {
-    width: 100%;
-    padding-top: $spacing-xxl;
-    text-align: center;
-    color: $white;
 
     @include mq(tablet) {
-        position: fixed;
         top: 0;
-        left: 0;
-        z-index: 10;
-        text-align: left;
-        padding: $spacing-m;
-        width: auto;
-        max-width: 12.5vw;
+        right: $spacing-xxl;
+        bottom: unset;
     }
 }
 
 .slider {
     @include mq(tablet) {
-        margin: 0 auto;
-        padding: $spacing-l 0 0;
-        width: 100vw;
+        display: flex;
+        height: 100vh;
     }
 }
 
-.divider {
+.container {
     @include mq(tablet) {
-        margin-left: 0;
+        border-left: $border-normal;
+    }
+}
+
+.info {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: $spacing-l $spacing-s;
+
+    @include mq(tablet) {
+        padding: $spacing-xxl $spacing-m;
     }
 }
 
 .desc {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border-top: $border-normal--white;
     padding: $spacing-l $spacing-s;
     justify-items: center;
 
     @include mq(tablet) {
-        grid-template-columns: 2fr 1fr;
-        padding: 0 $spacing-m;
-    }
-
-    @include mq(desktop) {
-        grid-template-columns: 1fr 1fr 1fr;
+        border-top: unset;
     }
 }
