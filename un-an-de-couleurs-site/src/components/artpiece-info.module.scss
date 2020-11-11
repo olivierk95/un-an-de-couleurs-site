@@ -1,21 +1,6 @@
 @import "../styles/utils/variables";
 @import "../styles/vendors/mq";
 
-.container {
-    display: grid;
-    border-top: $border-normal--white;
-    padding: $spacing-l $spacing-s;
-    justify-items: center;
-
-    @include mq(tablet) {
-        grid-template-columns: 2fr 1fr;
-        padding: 0 $spacing-m;
-    }
-
-    @include mq(desktop) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
 
 .element {
     max-width: 500px;
@@ -23,6 +8,15 @@
 
     @include mq(tablet) {
         padding: $spacing-l $spacing-m;
+    }
+}
+
+.element__modified {
+    max-width: 500px;
+    padding: $spacing-m 0;
+
+    @include mq(tablet) {
+        padding: $spacing-s 0;
     }
 }
 
@@ -44,8 +38,11 @@
     @include mq(desktop) {
         grid-column: 2;
         grid-row: 1;
-        margin-top: 0;
     }
+}
+
+.descriptioncontainer__modified {
+  
 }
 
 .actionscontainer {
@@ -63,9 +60,13 @@
     }
 }
 
+.actionscontainer {
+    
+}
+
 .date{
     padding-bottom: $spacing-m;
-    color: $white;
+    color: inherit;
     text-align: center;
 
     @include mq(tablet) {
@@ -73,12 +74,16 @@
     }
 }
 
+.characteristic {
+    color: inherit;
+}
+
 .description {
-    color: $white;
+    color: inherit;
 }
 
 .status {
-    color: $white;
+    color: inherit;
     text-align: center;
 
     @include mq(tablet) {
@@ -88,6 +93,7 @@
 
 .cta {
     text-align: center;
+    margin-top: $spacing-m;
 
     @include mq(tablet) {
         text-align: left;

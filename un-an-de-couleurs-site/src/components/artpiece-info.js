@@ -44,24 +44,24 @@ const ArtpieceInfo = (props) => {
 
     return (
         <div className={props.css}>
-            <div className={`${artpieceInfoStyles.element} ${artpieceInfoStyles.characteristicscontainer}`}>
-                <p className={`text-normal ${artpieceInfoStyles.date}`}>{props.date}</p>
+            <div className={`${props.modifier? artpieceInfoStyles.element__modified : artpieceInfoStyles.element} ${props.modifier? artpieceInfoStyles.characteristicscontainer__modified : artpieceInfoStyles.characteristicscontainer}`}>
+                {props.date && <p className={`text-normal ${artpieceInfoStyles.date}`}>{props.date}</p>}
                 <div>
-                    <p className="text-small">{props.support}</p>
-                    <p className="text-small">{props.technique}</p>
+                    <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{props.support}</p>
+                    <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{props.technique}</p>
                 </div>
             </div>
-            <hr className={`divider ${artpieceInfoStyles.divider}`}/>
+            <hr className={`divider ${artpieceInfoStyles.divider}`} style={{borderColor: props.modifier ? props.color : ""}}/>
             {props.description &&
                 <>
-                    <div className={`${artpieceInfoStyles.element} ${artpieceInfoStyles.descriptioncontainer}`}>
+                    <div className={`${props.modifier? artpieceInfoStyles.element__modified : artpieceInfoStyles.element} ${props.modifier? artpieceInfoStyles.descriptioncontainer__modified : artpieceInfoStyles.descriptioncontainer}`}>
                         <p className={`text-normal ${artpieceInfoStyles.description}`}>{props.description}</p>
                     </div>
-                    <hr className={`divider ${artpieceInfoStyles.divider}`}/>
+                    <hr className={`divider ${artpieceInfoStyles.divider}`} style={{borderColor: props.modifier ? props.color : ""}}/>
                 </>
             }
             <div className={artpieceInfoStyles.actionscontainer}>
-                <div className={artpieceInfoStyles.element}>
+                <div className={props.modifier? artpieceInfoStyles.element__modified : artpieceInfoStyles.element}>
                     {status &&
                         <div className={`h4-title ${artpieceInfoStyles.status}`}>-{status}-</div>
                     }
@@ -72,6 +72,33 @@ const ArtpieceInfo = (props) => {
                                     Acquérir
                                 </div>
                             </Link>
+                        </div>
+                    }
+                    {props.cost &&
+                        <div className={artpieceInfoStyles.cta}>
+                            <div className={`button--outside button-link`} style={{backgroundColor: props.color}}>
+                                <div className="button--inside">
+                                    Acheter
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    {props.sale &&
+                        <div className={artpieceInfoStyles.cta}>
+                            <div className={`button--outside button-link`} style={{backgroundColor: props.color}}>
+                                <div className="button--inside">
+                                    Acheter
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    {props.leasing &&
+                        <div className={artpieceInfoStyles.cta}>
+                            <div className={`button--outside button-link`} style={{backgroundColor: props.color}}>
+                                <div className="button--inside">
+                                    Leaser
+                                </div>
+                            </div>
                         </div>
                     }
                 </div>

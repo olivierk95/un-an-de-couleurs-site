@@ -7,6 +7,8 @@ import ArtpieceImages from "../components/artpiece-images"
 import ArtpieceInfo from "../components/artpiece-info"
 import ExitButton from "../components/exit-button"
 
+import "../styles/main.scss"
+
 const Artpiece = ( {data} ) => {
    
     // !!!!!!! à améliorer --> Hooks

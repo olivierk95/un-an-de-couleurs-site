@@ -72,11 +72,11 @@ header a {
     line-height: 1.7;
 
     @include mq(tablet) {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     @include mq(desktop) {
-        font-size: 17px;
+        font-size: 15px;
     }
 }
 
@@ -95,7 +95,7 @@ header a {
 
 .text-small {
     font-family: $font-text;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
     color: $white;
@@ -108,7 +108,7 @@ header a {
     }
 
     @include mq(desktop) {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 

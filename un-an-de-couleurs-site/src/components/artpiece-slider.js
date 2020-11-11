@@ -110,8 +110,8 @@ const ArtpieceSlider = (props) => {
                     <div key={slide + i} className={artpieceSliderStyles.slide} style={{height: props.vertical? '100vh' : '100%'}} onClick={nextSlide}>
                         <Img fluid={slide} className={artpieceSliderStyles.img} imgStyle={{objectFit: "contain"}}
                             style={{
-                                height: props.vertical? '90vh' : '75vh',
-                                width: props.vertical? '100%' : '75vw',
+                                height: props.vertical? '80vh' : '75vh',
+                                width: props.vertical? '80%' : '75vw',
                                 filter: props.modifier? `drop-shadow(0 -10px 0 ${props.color}) drop-shadow(0 10px 0 ${props.color}) drop-shadow(10px 0 0 ${props.color}) drop-shadow(-10px 0 0  ${props.color})` : 'drop-shadow(0 -10px 0 white) drop-shadow(0 10px 0 white) drop-shadow(10px 0 0 white) drop-shadow(-10px 0 0  white)'}} />           
                     </div>
                 ))}

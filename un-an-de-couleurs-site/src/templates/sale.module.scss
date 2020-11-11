@@ -23,18 +23,14 @@
     z-index: 100;
     display: flex;
     padding: $spacing-s;
-
-    @include mq(tablet) {
-        top: 0;
-        right: $spacing-xxl;
-        bottom: unset;
-    }
 }
 
 .slider {
     @include mq(tablet) {
         display: flex;
+        position: sticky;
         height: 100vh;
+        top: 0;
     }
 }
 
@@ -45,23 +41,34 @@
 }
 
 .info {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: $spacing-l $spacing-s;
+    @include mq(tablet) {
+        padding: $spacing-xl $spacing-m;
+    }
+}
+
+.title {
+    width: 100%;
+    padding-top: $spacing-xxl;
+    text-align: center;
+    color: $black;
 
     @include mq(tablet) {
-        padding: $spacing-xxl $spacing-m;
+        text-align: left;
+        width: auto;
+        max-width: 500px;
     }
 }
 
 .desc {
     display: flex;
     flex-direction: column;
-    border-top: $border-normal--white;
+    border-top: $border-normal;
     padding: $spacing-l $spacing-s;
-    justify-items: center;
+    justify-content: center;
+    color: $black;
 
     @include mq(tablet) {
         border-top: unset;
+        padding: 0;
     }
 }

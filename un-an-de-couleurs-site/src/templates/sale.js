@@ -6,6 +6,7 @@ import ArtpieceImages from "../components/artpiece-images"
 import ArrowsNav from "../components/arrows-nav"
 import ExitButton from '../components/exit-button'
 
+import "../styles/main.scss"
 import saleStyles from "./sale.module.scss"
 
 // !!!! à mettre autre part 
@@ -70,6 +71,7 @@ const Sale = ( {data} ) => {
                                 galeriePic={sale.galerie_cover}
                                 boutiquePic={sale.boutique_cover}
                                 sliderPics={sale.slider}
+                                color={sale.information.color_primary}
                             />
                             <ArtpieceInfo 
                                 support={sale.information.support}
@@ -77,7 +79,12 @@ const Sale = ( {data} ) => {
                                 description={sale.information.description}
                                 status={sale.status}
                                 date={sale.information.date}
+                                cost={sale.pricing.cost_material}
+                                sale={sale.pricing.sale_price}
+                                leasing={sale.pricing.leasing_price}
+                                color={sale.information.color_primary}
                                 css={saleStyles.desc}
+                                modifier={true}
                             />
                         </div>
                     </div>
@@ -146,7 +153,7 @@ export const pageQuery = graphql`
             boutique_cover {
                 childImageSharp {
                     fluid {
-                        src
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
