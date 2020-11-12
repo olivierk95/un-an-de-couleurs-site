@@ -3,9 +3,11 @@ import Img from 'gatsby-image'
 
 import artpieceSliderStyles from "./artpiece-slider.module.scss"
 
+let windowHeight = window.innerHeight;
+let windowWidth = window.innerWidth;
 
 const ArtpieceSlider = (props) => {
-    const getSize = () => props.vertical? window.innerHeight : window.innerWidth;
+    const getSize = () => props.vertical? windowHeight : windowWidth;
 
     const slides = []; 
     if (props.galeriePic) {

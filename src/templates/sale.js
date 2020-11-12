@@ -93,7 +93,7 @@ const Sale = ( {data} ) => {
                             <ArtpieceInfo 
                                 support={sale.information.support}
                                 technique={sale.information.technique}
-                                description={sale.information.description}
+                                description={sale.information.description ? sale.information.description : ''}
                                 status={sale.status}
                                 date={sale.information.date}
                                 cost={sale.pricing.cost_material}
