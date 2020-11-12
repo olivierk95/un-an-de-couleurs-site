@@ -1,0 +1,95 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.container {
+    @include mq(tablet) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    @include mq(desktop) {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+.sectioncontainer {
+    max-width: 500px;
+    margin: auto;
+}
+
+.projet {
+    padding: $spacing-xxxl $spacing-s $spacing-xl;
+
+    @include mq(tablet) {
+        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+    }
+    
+    @include mq(desktop) {
+        grid-row: 1 / span 2;
+    }
+}
+
+.sos {
+    padding: $spacing-xl $spacing-s;
+    border-top: $border-normal;
+
+    @include mq(tablet) {
+        grid-row: 2;
+        grid-column: 1;
+        padding: $spacing-xxl $spacing-m;
+    }
+
+    @include mq(desktop) {
+        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+        grid-row: 1;
+        grid-column: 2;
+        border-top: none;
+        border-left: $border-normal;
+        border-right: $border-normal;
+    }
+}
+
+.contact {
+    padding: $spacing-xl $spacing-s;
+    border-top: $border-normal;
+
+    @include mq(tablet) {
+        grid-column: 2;
+        border-top: none;
+        border-left: $border-normal;
+        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+    }
+    @include mq(desktop) {
+        grid-column: 3;
+        border-left: none;
+    }
+}
+
+.icon {
+    transition: all .3s $ease-out-quad;
+
+    &:hover {
+        fill: $black !important;
+        transform: scale(1.2);
+    }
+}
+
+.merci {
+    border-top: $border-normal;
+    padding: $spacing-xl $spacing-s;
+
+    @include mq(tablet) {
+        grid-column: 2;
+        grid-row: 2;
+        border-left: $border-normal;
+        padding: $spacing-xxl $spacing-m;
+    }
+
+    @include mq(desktop) {
+        grid-column: 2 / span 2;
+    }
+}
+
+.image {
+    border-radius: 50%;
+}

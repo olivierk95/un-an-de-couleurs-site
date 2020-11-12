@@ -1,0 +1,60 @@
+@import "../styles/utils/variables.scss";
+
+.quit {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: $spacing-s;
+    text-decoration: none;
+    color: $white;
+    transition: .3s $ease-in-quad;
+    cursor: pointer;
+
+    &:hover {
+        color: $black;
+
+        .cross {
+            color: $black;
+        }
+    }
+}
+
+.quit__modified {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: $spacing-s;
+    text-decoration: none;
+    color: $white;
+    transition: .3s $ease-in-quad;
+    cursor: pointer;
+
+    &:hover {
+
+        .button {
+            background-color: $black !important;
+        }
+    }
+}
+
+.button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: $spacing-xs;
+    transition: .3s $ease-in-quad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cross{
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+    color: $white;
+    transition: .3s $ease-in-quad;
+}

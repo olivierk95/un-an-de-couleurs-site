@@ -1,0 +1,43 @@
+@import "../styles/utils/variables";
+
+.title {
+    text-align: center;
+    color: $white;
+}
+
+.characteristics {
+    text-align: center;
+    color: $white;
+}
+
+.container {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+    text-decoration: none;
+
+    &:hover .info {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cover {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.info {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-m;
+    transform: translateY(100%);
+    transition: .3s $ease-in-quad;
+    opacity: 0;
+}

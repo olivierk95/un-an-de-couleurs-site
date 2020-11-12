@@ -1,0 +1,88 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.body {
+    min-height: 100vh;
+    padding-bottom: $spacing-l;
+    background-color: white;
+
+    @include mq(tablet) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding-bottom: 0;
+    }
+    @include mq(desktop) {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    padding: $spacing-s;
+}
+
+.slider {
+    @include mq(tablet) {
+        display: flex;
+        position: sticky;
+        height: 100vh;
+        top: 0;
+    }
+}
+
+.container {
+    position: relative;
+    @include mq(tablet) {
+        border-left: $border-normal;
+    }
+}
+
+.info {
+    @include mq(tablet) {
+        padding: $spacing-xl $spacing-m;
+    }
+}
+
+.title {
+    width: 100%;
+    padding-top: $spacing-xxl;
+    text-align: center;
+    color: $black;
+
+    @include mq(tablet) {
+        text-align: left;
+        width: auto;
+        max-width: 500px;
+    }
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    border-top: $border-normal;
+    padding: $spacing-l $spacing-s;
+    justify-content: center;
+    color: $black;
+
+    @include mq(tablet) {
+        border-top: unset;
+        padding: 0;
+    }
+}
+
+.payment {
+    background-color: $black;
+
+    @include mq(tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 110;
+    }
+}

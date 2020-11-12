@@ -1,0 +1,61 @@
+@import "../styles/vendors/mq";
+@import "../styles/utils/variables";
+
+.container {
+    display: none;
+
+    @include mq(tablet) {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 30px;
+    transition: .3s $ease-in-quad;
+    cursor: pointer;
+    padding: $spacing-m;
+
+    &:hover {
+        color: $black !important;
+        transform: scale(1.2);
+    }
+}
+
+.dotsnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    padding: $spacing-xs;
+    margin: $spacing-xs;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .3s $ease-in-quad;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}

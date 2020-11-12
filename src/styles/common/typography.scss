@@ -1,0 +1,129 @@
+p {
+    font-family: $font-text;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+header a {
+
+    &.is-active {
+        color: $black-transparent-medium;
+    }
+
+    &:not(.is-active):hover {
+        color: $black !important;
+    }
+}
+
+.h1-title {
+    font-family: $font-secondary;
+    font-size: 40px;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+    text-align: center;
+
+    @include mq(tablet) {
+        font-size: 45px;
+        text-align: left;
+    }
+
+    @include mq(desktop) {
+        font-size: 50px;
+    } 
+}
+
+.h2-title {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+
+    @include mq(tablet) {
+        font-size: 22px;
+    }
+
+    @include mq(desktop) {
+        font-size: 25px;
+    }
+}
+
+.h3-title {
+    font-family: $font-secondary;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+
+    @include mq(tablet) {
+        font-size: 19px;
+    }
+
+    @include mq(desktop) {
+        font-size: 20px;
+    }
+}
+
+.text-normal {
+    font-family: $font-text;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    @include mq(tablet) {
+        font-size: 15px;
+    }
+
+    @include mq(desktop) {
+        font-size: 15px;
+    }
+}
+
+.h4-title {
+    font-family: $font-primary;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: $spacing-m;
+    text-transform: uppercase;
+
+    @include mq(tablet) {
+        font-size: 13px;
+    }
+}
+
+.text-small {
+    font-family: $font-text;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: $white;
+    text-align: center;
+    letter-spacing: 1px;
+
+    @include mq(tablet) {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    @include mq(desktop) {
+        font-size: 14px;
+    }
+}
+
+.text-form {
+    font-family: $font-text;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+
+    @include mq(tablet) {
+        font-size: 14px;
+    }
+
+    @include mq(desktop) {
+        font-size: 15px;
+    }
+}
+
