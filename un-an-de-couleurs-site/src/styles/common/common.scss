@@ -1,9 +1,6 @@
 .content-container {
     margin: $spacing-xl 0 0;
 
-    @include mq(tablet) {
-        margin: $spacing-xxl 0 0;
-    }
 }
 .paragraph-container {
     padding: $spacing-l 0 0;

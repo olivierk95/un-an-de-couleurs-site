@@ -1,10 +1,13 @@
 import React from "react"
+import emailjs from "emailjs-com"
 import { graphql } from "gatsby"
 import ArtpieceSlider from "../components/artpiece-slider"
 import ArtpieceInfo from "../components/artpiece-info"
 import ArtpieceImages from "../components/artpiece-images"
 import ArrowsNav from "../components/arrows-nav"
 import ExitButton from '../components/exit-button'
+import Payment from '../components/payment'
+import useModal from '../hooks/useModal'
 
 import "../styles/main.scss"
 import saleStyles from "./sale.module.scss"
@@ -42,10 +45,24 @@ const Sale = ( {data} ) => {
         return d-c;
     })
 
-    console.log(pages)
     const currentPageIndex = pages.findIndex(x => x.information.title === sale.information.title);
     const previousPageSlug = currentPageIndex === 0 ? false : `/boutique/${string_to_slug(pages[currentPageIndex - 1].information.title)}`;
     const nextPageSlug = currentPageIndex === pages.length - 1 ? false : `/boutique/${string_to_slug(pages[currentPageIndex + 1].information.title)}`;
+    
+    function orderArticle(e) {
+        e.preventDefault();
+        e.target.push({article: sale.information.title})
+
+        emailjs.sendForm('un-an-de-couleurs', 'commande-mail', e.target, 'user_vjzPkHn9KPDGGjFZL8Lht')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            })
+            e.target.reset()
+    }
+
+    const {isShowing, toggle} = useModal();
 
     return (
         <>
@@ -81,13 +98,21 @@ const Sale = ( {data} ) => {
                                 date={sale.information.date}
                                 cost={sale.pricing.cost_material}
                                 sale={sale.pricing.sale_price}
-                                leasing={sale.pricing.leasing_price}
                                 color={sale.information.color_primary}
                                 css={saleStyles.desc}
                                 modifier={true}
+                                show={toggle}
                             />
                         </div>
                     </div>
+                    <Payment 
+                        css={saleStyles.payment} 
+                        orderArticle={orderArticle}cost={sale.pricing.cost_material} 
+                        sale={sale.pricing.sale_price} 
+                        title={sale.information.title}
+                        isShowing={isShowing}
+                        hide={toggle}
+                        />
                 </section>       
             </div>
         </>
@@ -109,7 +134,6 @@ export const pageQuery = graphql`
             }
             pricing {
                 cost_material
-                leasing_price
                 sale_price
             }
             boutique_cover {
@@ -147,7 +171,6 @@ export const pageQuery = graphql`
             }
             pricing {
                 cost_material
-                leasing_price
                 sale_price
             }
             boutique_cover {

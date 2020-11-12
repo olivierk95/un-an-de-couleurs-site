@@ -38,5 +38,23 @@ module.exports = {
         contentTypes: [ `artworks`, `sales` ],
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `BioRhyme Expanded`,
+            variants: [`200`, `300`, `400`, `700`, `800`]
+          },
+          {
+            family: `Vampiro One`,
+          },
+          {
+            family: `BioRhyme`,
+            variants: [`200`, `300`, `400`, `700`, `800`]
+          },
+        ],
+      },
+    }
   ],
 }

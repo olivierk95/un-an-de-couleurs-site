@@ -38,9 +38,8 @@ const Gallery = (props) => {
                     {cover.information.support ? 
                       <p className={`${galleryStyles.characteristics} text-small`}>{cover.information.support} - {cover.information.technique}</p> :
                       <p className={`${galleryStyles.characteristics} text-small`}>
-                        {cover.pricing.cost_material && <>Prix libre (coût du matériel: {cover.pricing.cost_material}€)<br/></>}
-                        {cover.pricing.sale_price && <>Prix de vente: {cover.pricing.sale_price}€<br/></>}
-                        {cover.pricing.leasing_price && <>Location d'un mois à {cover.pricing.leasing_price}€ avec option d'achat</>} 
+                        {cover.pricing.cost_material && <><span>Prix libre</span><br/><span>{`coût du matériel: ${cover.pricing.cost_material}€`}</span></>}
+                        {cover.pricing.sale_price && `${cover.pricing.sale_price}€`}
                       </p>
                     }
                 </div>

@@ -35,6 +35,7 @@
 }
 
 .container {
+    position: relative;
     @include mq(tablet) {
         border-left: $border-normal;
     }
@@ -70,5 +71,18 @@
     @include mq(tablet) {
         border-top: unset;
         padding: 0;
+    }
+}
+
+.payment {
+    background-color: $black;
+
+    @include mq(tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 110;
     }
 }

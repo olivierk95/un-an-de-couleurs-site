@@ -2,7 +2,8 @@
   "collectionName": "components_pricing_artpiece_prices",
   "info": {
     "name": "artpiece_price",
-    "icon": "euro-sign"
+    "icon": "euro-sign",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,9 +11,6 @@
       "type": "integer"
     },
     "sale_price": {
-      "type": "integer"
-    },
-    "leasing_price": {
       "type": "integer"
     }
   }

@@ -65,6 +65,9 @@ const ArtpieceInfo = (props) => {
                     {status &&
                         <div className={`h4-title ${artpieceInfoStyles.status}`}>-{status}-</div>
                     }
+                    {props.date && <p className={`text-normal ${artpieceInfoStyles.date}`}>{props.date}</p>}
+                    {props.cost && <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{`Prix libre (coût matériel: ${props.cost}€)`}</p> }
+                    {props.sale && <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{`${props.sale}€`}</p> }
                     {props.status === "acquerir" &&
                         <div className={artpieceInfoStyles.cta}>
                             <Link to={`/boutique/${string_to_slug(props.title)}`} className={`button--outside button-link bg-color-cycle`}>
@@ -76,27 +79,18 @@ const ArtpieceInfo = (props) => {
                     }
                     {props.cost &&
                         <div className={artpieceInfoStyles.cta}>
-                            <div className={`button--outside button-link`} style={{backgroundColor: props.color}}>
+                            <div className={`button--outside button-link`} onClick={props.show} style={{backgroundColor: props.color}}>
                                 <div className="button--inside">
-                                    Acheter
+                                    Passer commande
                                 </div>
                             </div>
                         </div>
                     }
                     {props.sale &&
                         <div className={artpieceInfoStyles.cta}>
-                            <div className={`button--outside button-link`} style={{backgroundColor: props.color}}>
+                            <div className={`button--outside button-link`} onClick={props.show} style={{backgroundColor: props.color}}>
                                 <div className="button--inside">
-                                    Acheter
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    {props.leasing &&
-                        <div className={artpieceInfoStyles.cta}>
-                            <div className={`button--outside button-link`} style={{backgroundColor: props.color}}>
-                                <div className="button--inside">
-                                    Leaser
+                                    Passer commande
                                 </div>
                             </div>
                         </div>

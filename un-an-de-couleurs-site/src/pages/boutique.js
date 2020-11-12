@@ -15,7 +15,6 @@ const BoutiquePage = () => {
               title
             }
             pricing {
-              leasing_price
               sale_price
               cost_material
             }
@@ -37,7 +36,6 @@ const BoutiquePage = () => {
               title
             }
             pricing {
-              leasing_price
               sale_price
               cost_material
             }
