@@ -3,8 +3,9 @@ import Img from 'gatsby-image'
 
 import artpieceSliderStyles from "./artpiece-slider.module.scss"
 
-let windowHeight = window.innerHeight;
-let windowWidth = window.innerWidth;
+//Vu sur internet pour que ça ne foire pas avec Webpack.... :'(
+let windowHeight = typeof window !=='undefined' && window.innerHeight;
+let windowWidth = typeof window !=='undefined' && window.innerWidth;
 
 const ArtpieceSlider = (props) => {
     const getSize = () => props.vertical? windowHeight : windowWidth;
