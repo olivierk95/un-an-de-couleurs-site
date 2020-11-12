@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: 'https://unandecouleurs-cms.herokuapp.com/' || 'http://localhost:1337',
+        apiURL: 'https://unandecouleurs-cms.herokuapp.com',
         contentTypes: [ `artworks`, `sales` ],
       },
     },
