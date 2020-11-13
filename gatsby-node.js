@@ -134,11 +134,11 @@ exports.onCreateNode = async ({
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `
-        type StapiArtwork implements Node {
+        type StrapiArtworks implements Node {
             sale_price: String
             cost_material: String
         }
-        type StapiSale implements Node {
+        type StrapiSales implements Node {
             sale_price: String
             cost_material: String
         }
