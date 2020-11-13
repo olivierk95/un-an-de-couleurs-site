@@ -106,7 +106,7 @@ exports.onCreateNode = async ({
     }) => {
         const { createNode } = actions
         
-    let multipleImages = node.slider
+        let multipleImages = node.slider
     
         if (node.internal.type === "StrapiArtworks" || node.internal.type === "StrapiSales") {
         if (multipleImages.length > 0) {
@@ -129,4 +129,19 @@ exports.onCreateNode = async ({
             })
         }
     }
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
+        type StapiArtworks implements Node {
+            sale_price: String
+            cost_material: String
+        }
+        type StapiSales implements Node {
+            sale_price: String
+            cost_material: String
+        }
+    `
+    createTypes(typeDefs)
 }
