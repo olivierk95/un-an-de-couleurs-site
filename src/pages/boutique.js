@@ -10,14 +10,10 @@ const BoutiquePage = () => {
           nodes {
             id
             created_at
-            information {
-              color_primary
-              title
-            }
-            pricing {
-              sale_price
-              cost_material
-            }
+            title
+            color
+            sale_price
+            cost_material
             boutique_cover {
               childImageSharp {
                 fluid(maxHeight: 500, maxWidth: 500) {
@@ -31,14 +27,10 @@ const BoutiquePage = () => {
           nodes {
             id
             created_at
-            information {
-              color_primary
-              title
-            }
-            pricing {
-              sale_price
-              cost_material
-            }
+            title
+            color
+            sale_price
+            cost_material
             boutique_cover {
               childImageSharp {
                 fluid(maxHeight: 500, maxWidth: 500) {

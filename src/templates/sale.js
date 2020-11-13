@@ -45,13 +45,13 @@ const Sale = ( {data} ) => {
         return d-c;
     })
 
-    const currentPageIndex = pages.findIndex(x => x.information.title === sale.information.title);
-    const previousPageSlug = currentPageIndex === 0 ? false : `/boutique/${string_to_slug(pages[currentPageIndex - 1].information.title)}`;
-    const nextPageSlug = currentPageIndex === pages.length - 1 ? false : `/boutique/${string_to_slug(pages[currentPageIndex + 1].information.title)}`;
+    const currentPageIndex = pages.findIndex(x => x.title === sale.title);
+    const previousPageSlug = currentPageIndex === 0 ? false : `/boutique/${string_to_slug(pages[currentPageIndex - 1].title)}`;
+    const nextPageSlug = currentPageIndex === pages.length - 1 ? false : `/boutique/${string_to_slug(pages[currentPageIndex + 1].title)}`;
     
     function orderArticle(e) {
         e.preventDefault();
-        e.target.push({article: sale.information.title})
+        e.target.push({article: sale.title})
 
         emailjs.sendForm('un-an-de-couleurs', 'commande-mail', e.target, 'user_vjzPkHn9KPDGGjFZL8Lht')
             .then((result) => {
@@ -66,39 +66,39 @@ const Sale = ( {data} ) => {
 
     return (
         <>
-            <ExitButton url="/boutique" backgroundColor={sale.information.color_primary} modifier={true} />
-            <ArrowsNav previousSlug={previousPageSlug} previous={false} nextSlug={nextPageSlug} next={false} style={saleStyles.navigation} modifier={true} backgroundColor={sale.information.color_primary} />
+            <ExitButton url="/boutique" backgroundColor={sale.color} modifier={true} />
+            <ArrowsNav previousSlug={previousPageSlug} previous={false} nextSlug={nextPageSlug} next={false} style={saleStyles.navigation} modifier={true} backgroundColor={sale.color} />
             <div className={saleStyles.body}>
                 <ArtpieceSlider
                     css={saleStyles.slider} 
                     boutiquePic={sale.boutique_cover}
                     galeriePic={sale.galerie_cover}
                     sliderPics={sale.slider}
-                    color={sale.information.color_primary}
+                    color={sale.color}
                     vertical={true}
                     modifier={true}
                 />
                 <section className={saleStyles.container}> 
                     <div className={saleStyles.info}>
                         <div className={saleStyles.title}>
-                            <h1 className="h3-title">{sale.information.title}</h1>
+                            <h1 className="h3-title">{sale.title}</h1>
                         </div>
                         <div className={saleStyles.content}>
                             <ArtpieceImages 
                                 galeriePic={sale.galerie_cover}
                                 boutiquePic={sale.boutique_cover}
                                 sliderPics={sale.slider}
-                                color={sale.information.color_primary}
+                                color={sale.color}
                             />
                             <ArtpieceInfo 
-                                support={sale.information.support}
-                                technique={sale.information.technique}
-                                description={sale.information.description ? sale.information.description : ''}
+                                support={sale.support}
+                                technique={sale.technique}
+                                description={sale.description ? sale.description : ''}
                                 status={sale.status}
-                                date={sale.information.date}
-                                cost={sale.pricing.cost_material}
-                                sale={sale.pricing.sale_price}
-                                color={sale.information.color_primary}
+                                date={sale.date}
+                                cost={sale.cost_material}
+                                sale={sale.sale_price}
+                                color={sale.color}
                                 css={saleStyles.desc}
                                 modifier={true}
                                 show={toggle}
@@ -107,9 +107,9 @@ const Sale = ( {data} ) => {
                     </div>
                     <Payment 
                         css={saleStyles.payment} 
-                        orderArticle={orderArticle}cost={sale.pricing.cost_material} 
-                        sale={sale.pricing.sale_price} 
-                        title={sale.information.title}
+                        orderArticle={orderArticle}cost={sale.cost_material} 
+                        sale={sale.sale_price} 
+                        title={sale.title}
                         isShowing={isShowing}
                         hide={toggle}
                         />
@@ -125,17 +125,13 @@ export const pageQuery = graphql`
     query SaleQuery ($id: String!) {
         artworkSale: strapiArtworks (id: {eq: $id}) {
             id
-            information {
-                color_primary
-                description
-                support
-                technique
-                title
-            }
-            pricing {
-                cost_material
-                sale_price
-            }
+            title
+            support
+            technique
+            description
+            color
+            sale_price
+            cost_material
             boutique_cover {
                 childImageSharp {
                     fluid {
@@ -162,17 +158,13 @@ export const pageQuery = graphql`
         }
         sale: strapiSales (id: {eq: $id}) {
             id
-            information {
-                color_primary
-                description
-                support
-                technique
-                title
-            }
-            pricing {
-                cost_material
-                sale_price
-            }
+            title
+            support
+            technique
+            description
+            color
+            sale_price
+            cost_material
             boutique_cover {
                 childImageSharp {
                     fluid {
@@ -193,17 +185,13 @@ export const pageQuery = graphql`
         sales: allStrapiSales {
             nodes {
                 created_at
-                information {
-                    title
-                }
+                title
             }
         }
         artworkSales: allStrapiArtworks(filter: {status: {eq: "acquerir"}}) {
             nodes {
                 created_at
-                information {
-                    title
-                }
+                title
             }
         }
     }

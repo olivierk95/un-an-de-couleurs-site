@@ -47,17 +47,13 @@ exports.createPages = async({ graphql, actions}) => {
             sales: allStrapiSales {
                 nodes {
                     id
-                    information {
-                        title
-                    }
+                    title
                 }
             }
             artworksSales: allStrapiArtworks(filter: {status: {eq: "acquerir"}}) {
                 nodes {
                     id
-                    information {
-                        title
-                    }
+                    title
                 }
             }
         }
@@ -78,7 +74,7 @@ exports.createPages = async({ graphql, actions}) => {
  
         result.data.sales.nodes.forEach(sale => {
             createPage({
-                path: `/boutique/${string_to_slug(sale.information.title)}`,
+                path: `/boutique/${string_to_slug(sale.title)}`,
                 component: saleTemplate,
                 context: {
                     id: sale.id,
@@ -88,7 +84,7 @@ exports.createPages = async({ graphql, actions}) => {
 
         result.data.artworksSales.nodes.forEach(sale => {
             createPage({
-                path: `/boutique/${string_to_slug(sale.information.title)}`,
+                path: `/boutique/${string_to_slug(sale.title)}`,
                 component: saleTemplate,
                 context: {
                     id: sale.id,

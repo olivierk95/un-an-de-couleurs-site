@@ -10,20 +10,18 @@ const IndexPage = () => {
           nodes {
             id
             day
+            title
+            support
+            technique
             cover_width
             cover_height
+            color
             galerie_cover {
               childImageSharp {
                 fluid(maxHeight: 1000, maxWidth: 1000) {
                   ...GatsbyImageSharpFluid
                 }
               }
-            }
-            information {
-              title
-              color_primary
-              support
-              technique
             }
           }
         }

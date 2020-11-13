@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.GATSBY_API_URL,
+        apiURL: process.env.API_URL,
         contentTypes: [ `artworks`, `sales` ],
       },
     },

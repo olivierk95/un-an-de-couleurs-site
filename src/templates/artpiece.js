@@ -18,11 +18,11 @@ const Artpiece = ( {data} ) => {
     
     return (
         <>
-            <ExitButton url="/" backgroundColor={data.artpiece.information.color_primary} />
-            <ArrowsNav previousSlug={previousPage && `/jour-${previousPage}`} previous={`Jour ${previousPage}`} nextSlug={nextPage && `/jour-${nextPage}`} next={`Jour ${nextPage}`} style={artpieceStyles.navigation} backgroundColor={data.artpiece.information.color_primary} />
-            <section className={artpieceStyles.body} style={{backgroundColor: data.artpiece.information.color_primary}}>
+            <ExitButton url="/" backgroundColor={data.artpiece.color} />
+            <ArrowsNav previousSlug={previousPage && `/jour-${previousPage}`} previous={`Jour ${previousPage}`} nextSlug={nextPage && `/jour-${nextPage}`} next={`Jour ${nextPage}`} style={artpieceStyles.navigation} backgroundColor={data.artpiece.color} />
+            <section className={artpieceStyles.body} style={{backgroundColor: data.artpiece.color}}>
                 <div className={artpieceStyles.title}>
-                    <h1 className="h3-title">{data.artpiece.information.title}</h1>
+                    <h1 className="h3-title">{data.artpiece.title}</h1>
                     <hr className={`divider ${artpieceStyles.divider}`}/>
                     <h2 className="h4-title">{`Jour ${data.artpiece.day}`}</h2>
                 </div>
@@ -40,12 +40,12 @@ const Artpiece = ( {data} ) => {
                         sliderPics={data.artpiece.slider}
                     />
                     <ArtpieceInfo 
-                        support={data.artpiece.information.support}
-                        technique={data.artpiece.information.technique}
-                        description={data.artpiece.information.description}
+                        support={data.artpiece.support}
+                        technique={data.artpiece.technique}
+                        description={data.artpiece.description}
                         status={data.artpiece.status}
-                        date={data.artpiece.information.date}
-                        title={data.artpiece.information.title}
+                        date={data.artpiece.date}
+                        title={data.artpiece.title}
                         css={artpieceStyles.desc}
                     />
                 </div>
@@ -60,15 +60,13 @@ export const pageQuery = graphql`
     query ArtpieceQuery ($id: String!) {
         artpiece: strapiArtworks(id: {eq: $id}) {
             day
+            title
+            technique
+            support
+            description
+            color
+            date
             status
-            information {
-                title
-                technique
-                support
-                description
-                color_primary
-                date
-            }
             galerie_cover {
                 childImageSharp {
                     fluid {
