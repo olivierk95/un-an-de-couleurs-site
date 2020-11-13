@@ -9,13 +9,13 @@ const ExitButton = (props) => {
         <>
             {props.url? 
                 <Link to={props.url} className={props.modifier ? exitButtonStyles.quit__modified : exitButtonStyles.quit}>
-                    <div className={exitButtonStyles.button} style={{backgroundColor: props.backgroundColor, border: props.modifier? "none" : '2px solid white'}}>
+                    <div className={exitButtonStyles.button} style={{backgroundColor: props.backgroundColor, border: props.modifier? "none" : '3px solid white'}}>
                         <p className={exitButtonStyles.cross}>X</p>
                     </div>
                     {props.desc && <p className={arrowsNavStyles.linkdesc}>{props.desc}</p> }
                 </Link> : 
                 <div onClick={props.hide} className={props.modifier ? exitButtonStyles.quit__modified : exitButtonStyles.quit}>
-                    <div className={exitButtonStyles.button} style={{backgroundColor: props.backgroundColor, border: props.modifier? "none" : '2px solid white'}}>
+                    <div className={exitButtonStyles.button} style={{backgroundColor: props.backgroundColor, border: props.modifier? "none" : '3px solid white'}}>
                         <p className={exitButtonStyles.cross}>X</p>
                     </div>
                     {props.desc && <p className={arrowsNavStyles.linkdesc}>{props.desc}</p> }

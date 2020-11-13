@@ -65,6 +65,14 @@
     }
 }
 
+.contactDetails {
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
 .icon {
     transition: all .3s $ease-out-quad;
 

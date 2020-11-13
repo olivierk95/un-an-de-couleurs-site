@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: 'https://unandecouleurs-cms.herokuapp.com',
+        apiURL: process.env.GATSBY_API_URL,
         contentTypes: [ `artworks`, `sales` ],
       },
     },
@@ -47,7 +47,17 @@ module.exports = {
             variants: [`200`, `300`, `400`, `700`, `800`]
           },
           {
-            family: `Vampiro One`,
+            family: `Kumar One Outline`,
+          },
+          {
+            family: `Kumar One`,
+          },
+          {
+            family: `Limelight`,
+          },
+          {
+            family: `Montserrat`,
+            variants: [`100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`,]
           },
           {
             family: `BioRhyme`,

@@ -28,7 +28,7 @@ const ContactForms = () => {
     }
     return (
         <>
-            <div className="paragraph-container">
+            <div className="content-container">
                 <h4 className="h3-title">Discussion par mail</h4>
                 <form onSubmit={sendEmail}>
                     <input className={contactFormStyles.input + ` text-form`} type="text" name="nom" placeholder="Votre doux nom" required/>
@@ -40,7 +40,7 @@ const ContactForms = () => {
                     </div>
                 </form>
             </div>
-            <div className="paragraph-container">
+            <div className="content-container">
                 <h4 className="h3-title">Message rapide et anonyme</h4>
                 <form onSubmit={sendMessage}>
                     <textarea className={contactFormStyles.input + ` text-form`} name="message" placeholder="Message" required/>

@@ -8,17 +8,17 @@ const ArtpieceImages = (props) => {
     return (
         <ul className={artpieceImagesStyles.ul}>
             {props.galeriePic &&
-                <li className={artpieceImagesStyles.li} style={{border: `solid 5px ${props.color? props.color :'white'}`}}>
+                <li className={artpieceImagesStyles.li} style={{border: `solid 6px ${props.color? props.color :'white'}`}}>
                     <Img fluid={props.galeriePic.childImageSharp.fluid} />               
                 </li>
             }
             {props.boutiquePic &&
-                <li className={artpieceImagesStyles.li} style={{border: `solid 5px ${props.color? props.color :'white'}`}}>
+                <li className={artpieceImagesStyles.li} style={{border: `solid 6px ${props.color? props.color :'white'}`}}>
                     <Img fluid={props.boutiquePic.childImageSharp.fluid}/>               
                 </li>
             }
             {props.sliderPics && props.sliderPics.map((sliderPic, i) =>
-                    <li key={sliderPic + i} className={artpieceImagesStyles.li} style={{border: `solid 5px ${props.color? props.color :'white'}`}}>
+                    <li key={sliderPic + i} className={artpieceImagesStyles.li} style={{border: `solid 6px ${props.color? props.color :'white'}`}}>
                         <Img fluid={sliderPic.localFile.childImageSharp.fluid} />               
                     </li>
                 ) 

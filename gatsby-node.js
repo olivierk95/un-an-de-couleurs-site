@@ -118,7 +118,7 @@ exports.onCreateNode = async ({
             const images = await Promise.all(
             multipleImages.map(el =>
                 createRemoteFileNode({
-                    url: el.url,
+                    url: process.env.DEPLOY_URL ? el.url : `http://localhost:1337${el.url}`,
                     parentNodeId: node.id,
                     store,
                     cache,

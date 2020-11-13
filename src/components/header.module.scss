@@ -65,18 +65,18 @@
     justify-self: center;
     align-self: end;
     font-family: $font-secondary;
-    font-size: 13px;
+    font-size: 12px;
     grid-row: 2;
     grid-column: 2;
 
     @include mq(tablet) {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     @include mq(desktop) {
         grid-row: 1;
         grid-column: 2;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -108,15 +108,18 @@
 
         a {      
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             padding: $spacing-m;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
 
             @include mq(tablet) {
-                font-size: 15px;
+                font-size: 13px;
                 padding: $spacing-xs;
             }
             @include mq(tablet) {
-                font-size: 16px;
+                font-size: 14px;
             }
         }     
     }
