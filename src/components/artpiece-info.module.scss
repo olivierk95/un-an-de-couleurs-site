@@ -5,31 +5,20 @@
 .element {
     max-width: 500px;
     padding: $spacing-m 0;
+    margin: 0 auto;
 
     @include mq(tablet) {
         padding: $spacing-l $spacing-m;
     }
 }
 
-.element__modified {
-    max-width: 500px;
-    padding: $spacing-m 0;
-
-    @include mq(tablet) {
-        padding: $spacing-s 0;
-    }
-}
-
 .characteristicscontainer {
     width: 100%;
-    margin: 0 auto;
-
-    @include mq(tablet) {
-        justify-self: start;
-    }
 }
 
 .descriptioncontainer {
+    width: 100%;
+
     @include mq(tablet) {
         grid-column: 1;
         grid-row: 2;
@@ -41,15 +30,12 @@
     }
 }
 
-.descriptioncontainer__modified {
-  
-}
-
 .actionscontainer {
+    width: 100%;
+
     @include mq(tablet) {
         grid-column: 2;
         grid-row: 1 / span 2;
-        width: 100%;
         height: 100%;
         border-left: $border-normal--white;
     }
@@ -60,13 +46,8 @@
     }
 }
 
-.actionscontainer {
-    
-}
-
-.date{
+.date {
     padding-bottom: $spacing-m;
-    color: inherit;
     text-align: center;
 
     @include mq(tablet) {
@@ -74,16 +55,7 @@
     }
 }
 
-.characteristic {
-    color: inherit;
-}
-
-.description {
-    color: inherit;
-}
-
 .status {
-    color: inherit;
     text-align: center;
 
     @include mq(tablet) {

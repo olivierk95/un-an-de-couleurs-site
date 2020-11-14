@@ -1,0 +1,43 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.element {
+    max-width: 500px;
+    padding: $spacing-m 0;
+
+    @include mq(tablet) {
+        padding: $spacing-s 0;
+    }
+}
+
+.date {
+    padding-bottom: $spacing-m;
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
+.status {
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
+.cta {
+    text-align: center;
+    margin-top: $spacing-m;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
+.divider {
+    @include mq(tablet) {
+        margin: $spacing-m 0;
+    }
+}

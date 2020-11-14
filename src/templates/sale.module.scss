@@ -44,6 +44,7 @@
 .info {
     @include mq(tablet) {
         padding: $spacing-xl $spacing-m;
+        margin: 0 auto;
     }
 }
 
@@ -57,6 +58,7 @@
         text-align: left;
         width: auto;
         max-width: 500px;
+        padding-top: 0;
     }
 }
 
@@ -66,6 +68,7 @@
     border-top: $border-normal;
     padding: $spacing-l $spacing-s;
     justify-content: center;
+    align-items: center;
     color: $black;
 
     @include mq(tablet) {
@@ -75,14 +78,15 @@
 }
 
 .payment {
-    background-color: $black;
+    position: fixed;
+    overflow-x: scroll;
+    z-index: 110;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     @include mq(tablet) {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 110;
     }
 }

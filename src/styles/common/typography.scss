@@ -17,7 +17,8 @@ header a {
     }
 }
 
-.h1-title {
+.h1-title, [class*="h1-title"] {
+    $self: &;
     font-family: $font-headline;
     font-size: 50px;
     line-height: 1.5;
@@ -27,9 +28,13 @@ header a {
     @include mq(tablet) {
         text-align: left;
     }
+
+    &[class*="--white"] {
+        color: $white;
+    }
 }
 
-.h2-title {
+.h2-title, [class*="h2-title"] {
     font-family: $font-primary;
     font-size: 20px;
     font-weight: 400;
@@ -43,24 +48,32 @@ header a {
     @include mq(desktop) {
         font-size: 25px;
     }
+
+    &[class*="--white"] {
+        color: $white;
+    }
 }
 
-.h3-title {
+.h3-title, [class*="h3-title"] {
     font-family: $font-secondary;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
     margin-bottom: $spacing-s;
 
-    @include mq(tablet) {
-        font-size: 19px;
+    &[class*="--white"] {
+        color: $white;
     }
 
-    @include mq(desktop) {
-        font-size: 20px;
+    &[class*="--important"] {
+        font-size: 30px;
+
+        @include mq(tablet) {
+            font-size: 20px;
+        }
     }
 }
 
-.text-normal {
+.text-normal, [class*="text-normal"] {
     font-family: $font-text;
     font-size: 15px;
     font-weight: 400;
@@ -73,9 +86,13 @@ header a {
     @include mq(desktop) {
         font-size: 15px;
     }
+
+    &[class*="--white"] {
+        color: $white;
+    }
 }
 
-.h4-title {
+.h4-title, [class*="h4-title"] {
     font-family: $font-primary;
     font-size: 12px;
     font-weight: 300;
@@ -86,14 +103,17 @@ header a {
     @include mq(tablet) {
         font-size: 13px;
     }
+
+    &[class*="--white"] {
+        color: $white;
+    }
 }
 
-.text-small {
+.text-small, [class*="text-small"] {
     font-family: $font-text;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
-    color: $white;
     text-align: center;
     letter-spacing: 1px;
 
@@ -104,6 +124,22 @@ header a {
 
     @include mq(desktop) {
         font-size: 14px;
+    }
+
+    &[class*="--white"] {
+        color: $white;
+    }
+}
+
+.text-very-small, [class*="text-very-small"] {
+    font-family: $font-text;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 1px;
+
+    &[class*="--white"] {
+        color: $white;
     }
 }
 

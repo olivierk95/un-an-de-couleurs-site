@@ -36,8 +36,8 @@ const Gallery = (props) => {
                     }
                     <hr className="divider"/>
                     {cover.support ? 
-                      <p className={`${galleryStyles.characteristics} text-small`}>{cover.support} - {cover.technique}</p> :
-                      <p className={`${galleryStyles.characteristics} text-small`}>
+                      <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.support} - {cover.technique}</p> :
+                      <p className={`${galleryStyles.characteristics} text-small--white`}>
                         {cover.cost_material && <><span>Prix libre</span><br/><span>{`coût du matériel: ${cover.cost_material}€`}</span></>}
                         {cover.sale_price && `${cover.sale_price}€`}
                       </p>

@@ -8,7 +8,7 @@ const Footer = () => {
             <div className={footerStyles.container}>
                 <div className={footerStyles.summary}>
                     <div className={footerStyles.divcontainer}>
-                        <p className="text-small">Un an de couleurs est un projet artistique de Olivier Keutgens, Organik de mon nom d’artiste.<br/>
+                        <p className="text-small--white">Un an de couleurs est un projet artistique de Olivier Keutgens, Organik de mon nom d’artiste.<br/>
                         Le concept étant de partager mes créations quotidiennes au court d’une année. Il s’agit d’un petit défi personnel. A voir où cela m’amènera.</p>
                     </div>
                 </div>
@@ -21,7 +21,7 @@ const Footer = () => {
                 <div className={footerStyles.contact}>
                     <div className={footerStyles.divcontainer}>
                         <p className={footerStyles.subtitle}>M'accoster</p> 
-                        <p className="text-small">organik.artist@gmail.com</p>
+                        <p className="text-small--white">organik.artist@gmail.com</p>
                     </div>
                 </div>
             </div>

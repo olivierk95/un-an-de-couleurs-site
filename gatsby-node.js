@@ -131,6 +131,7 @@ exports.onCreateNode = async ({
     }
 }
 
+//Enables empty fields to be acceptable at the build
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `

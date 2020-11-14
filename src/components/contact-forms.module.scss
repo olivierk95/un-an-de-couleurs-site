@@ -1,15 +1,4 @@
 @import "../styles/utils/variables";
 
-.input {
-    border: $border-normal;
-    box-sizing: border-box;
-    background: none;
-    padding: $spacing-xs;
-    margin-bottom: $spacing-s;
-    outline: none;
-    width: 100%;
-    
-    &:focus, &:hover {
-        border-color: $blue;
-    }
-}
+
+

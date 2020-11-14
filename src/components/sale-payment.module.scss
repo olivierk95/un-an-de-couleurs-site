@@ -1,0 +1,16 @@
+@import "../styles/utils/variables";
+@import "../styles/vendors/mq";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+    padding: $spacing-l $spacing-s;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include mq(tablet) {
+        padding: $spacing-xl $spacing-s;
+    }
+}

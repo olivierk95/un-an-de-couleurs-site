@@ -27,6 +27,7 @@
     left: 5px;
     transition: all .3s $ease-in-quad;
     cursor: pointer;
+    text-align: center;
 
     &:hover {
         color: $white;
@@ -80,6 +81,21 @@
     @include mq(xs) {
         grid-column: span 2;
         grid-row: span 2;
+    }
+}
+
+.form-input, [class*="form-input"] {
+    border: $border-normal;
+    box-sizing: border-box;
+    background: none;
+    padding: $spacing-xs;
+    margin-bottom: $spacing-s;
+    outline: none;
+    width: 100%;
+    background-color: $white;
+    
+    &:focus, &:hover {
+        border-color: $blue;
     }
 }
 

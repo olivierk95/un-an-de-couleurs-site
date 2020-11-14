@@ -52,15 +52,17 @@
 }
 
 .desc {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border-top: $border-normal--white;
     padding: $spacing-l $spacing-s;
     justify-items: center;
     color: $white;
 
     @include mq(tablet) {
+        display: grid;
         grid-template-columns: 2fr 1fr;
-        padding: 0 $spacing-m;
+        padding: 0;
     }
 
     @include mq(desktop) {

@@ -2,11 +2,11 @@ import React from "react"
 import emailjs from "emailjs-com"
 import { graphql } from "gatsby"
 import ArtpieceSlider from "../components/artpiece-slider"
-import ArtpieceInfo from "../components/artpiece-info"
+import SaleInfo from "../components/sale-info"
 import ArtpieceImages from "../components/artpiece-images"
 import ArrowsNav from "../components/arrows-nav"
 import ExitButton from '../components/exit-button'
-import Payment from '../components/payment'
+import SalePayment from '../components/sale-payment'
 import useModal from '../hooks/useModal'
 
 import "../styles/main.scss"
@@ -81,7 +81,7 @@ const Sale = ( {data} ) => {
                 <section className={saleStyles.container}> 
                     <div className={saleStyles.info}>
                         <div className={saleStyles.title}>
-                            <h1 className="h3-title">{sale.title}</h1>
+                            <h1 className="h3-title--important">{sale.title}</h1>
                         </div>
                         <div className={saleStyles.content}>
                             <ArtpieceImages 
@@ -90,7 +90,7 @@ const Sale = ( {data} ) => {
                                 sliderPics={sale.slider}
                                 color={sale.color}
                             />
-                            <ArtpieceInfo 
+                            <SaleInfo 
                                 support={sale.support}
                                 technique={sale.technique}
                                 description={sale.description ? sale.description : ''}
@@ -105,10 +105,11 @@ const Sale = ( {data} ) => {
                             />
                         </div>
                     </div>
-                    <Payment 
+                    <SalePayment 
                         css={saleStyles.payment} 
                         orderArticle={orderArticle}cost={sale.cost_material} 
                         sale={sale.sale_price} 
+                        color={sale.color}
                         title={sale.title}
                         isShowing={isShowing}
                         hide={toggle}

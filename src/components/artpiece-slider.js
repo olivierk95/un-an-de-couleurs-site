@@ -3,11 +3,13 @@ import Img from 'gatsby-image'
 
 import artpieceSliderStyles from "./artpiece-slider.module.scss"
 
-//Vu sur internet pour que ça ne foire pas avec Webpack.... :'(
-let windowHeight = typeof window !=='undefined' && window.innerHeight;
-let windowWidth = typeof window !=='undefined' && window.innerWidth;
+
 
 const ArtpieceSlider = (props) => {
+    //Vu sur internet pour que ça ne foire pas avec Webpack.... :'(
+    let windowHeight = typeof window !=='undefined' && window.innerHeight;
+    let windowWidth = typeof window !=='undefined' && window.innerWidth;
+
     const getSize = () => props.vertical? windowHeight : windowWidth;
 
     const slides = []; 

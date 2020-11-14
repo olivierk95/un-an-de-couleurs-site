@@ -44,30 +44,29 @@ const ArtpieceInfo = (props) => {
 
     return (
         <div className={props.css}>
-            <div className={`${props.modifier? artpieceInfoStyles.element__modified : artpieceInfoStyles.element} ${props.modifier? artpieceInfoStyles.characteristicscontainer__modified : artpieceInfoStyles.characteristicscontainer}`}>
-                {props.date && <p className={`text-normal ${artpieceInfoStyles.date}`}>{props.date}</p>}
-                <div>
-                    <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{props.support}</p>
-                    <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{props.technique}</p>
-                </div>
-            </div>
-            <hr className={`divider ${artpieceInfoStyles.divider}`} style={{borderColor: props.modifier ? props.color : ""}}/>
-            {props.description &&
-                <>
-                    <div className={`${props.modifier? artpieceInfoStyles.element__modified : artpieceInfoStyles.element} ${props.modifier? artpieceInfoStyles.descriptioncontainer__modified : artpieceInfoStyles.descriptioncontainer}`}>
-                        <p className={`text-normal ${artpieceInfoStyles.description}`}>{props.description}</p>
+            <div className={artpieceInfoStyles.characteristicscontainer}>
+                <div className={artpieceInfoStyles.element}>
+                    {props.date && <p className={`text-normal--white ${artpieceInfoStyles.date}`}>{props.date}</p>}
+                    <div>
+                        <p className="text-small--white">{props.support}</p>
+                        <p className="text-small--white">{props.technique}</p>
                     </div>
-                    <hr className={`divider ${artpieceInfoStyles.divider}`} style={{borderColor: props.modifier ? props.color : ""}}/>
-                </>
+                </div>
+                <hr className={`divider ${artpieceInfoStyles.divider}`}/>
+            </div>
+            {props.description &&
+                <div className={artpieceInfoStyles.descriptioncontainer}>
+                    <div className={artpieceInfoStyles.element}>
+                        <p className="text-normal--white">{props.description}</p>
+                    </div>
+                    <hr className={`divider ${artpieceInfoStyles.divider}`}/>
+                </div>
             }
             <div className={artpieceInfoStyles.actionscontainer}>
-                <div className={props.modifier? artpieceInfoStyles.element__modified : artpieceInfoStyles.element}>
+                <div className={artpieceInfoStyles.element}>
                     {status &&
-                        <div className={`h4-title ${artpieceInfoStyles.status}`}>-{status}-</div>
+                        <div className={`h4-title--white ${artpieceInfoStyles.status}`}>-{status}-</div>
                     }
-                    {props.date && <p className={`text-normal ${artpieceInfoStyles.date}`}>{props.date}</p>}
-                    {props.cost && <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{`Prix libre (coût matériel: ${props.cost}€)`}</p> }
-                    {props.sale && <p className={`text-small ${artpieceInfoStyles.characteristic}`}>{`${props.sale}€`}</p> }
                     {props.status === "acquerir" &&
                         <div className={artpieceInfoStyles.cta}>
                             <Link to={`/boutique/${string_to_slug(props.title)}`} className={`button--outside button-link bg-color-cycle`}>
@@ -75,24 +74,6 @@ const ArtpieceInfo = (props) => {
                                     Acquérir
                                 </div>
                             </Link>
-                        </div>
-                    }
-                    {props.cost &&
-                        <div className={artpieceInfoStyles.cta}>
-                            <div className={`button--outside button-link`} onClick={props.show} style={{backgroundColor: props.color}}>
-                                <div className="button--inside">
-                                    Passer commande
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    {props.sale &&
-                        <div className={artpieceInfoStyles.cta}>
-                            <div className={`button--outside button-link`} onClick={props.show} style={{backgroundColor: props.color}}>
-                                <div className="button--inside">
-                                    Passer commande
-                                </div>
-                            </div>
                         </div>
                     }
                 </div>
