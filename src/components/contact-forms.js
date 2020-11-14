@@ -28,9 +28,10 @@ const ContactForms = () => {
 
         console.log(recaptchaValue)
         console.log(templateParams)
+        console.log(e.target)
 
         if (verifiedRecaptcha) {
-            emailjs.sendForm('un-an-de-couleurs', 'discussion-mail', templateParams, 'user_vjzPkHn9KPDGGjFZL8Lht')
+            emailjs.sendForm('un-an-de-couleurs', 'discussion-mail', e.target, 'user_vjzPkHn9KPDGGjFZL8Lht')
                 .then((result) => {
                     console.log(result.text);
                 }, (error) => {
