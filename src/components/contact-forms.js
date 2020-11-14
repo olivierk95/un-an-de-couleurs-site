@@ -18,14 +18,16 @@ const ContactForms = () => {
         e.preventDefault();
 
         const recaptchaValue = recaptchaRef.current.getValue();
-
-        console.log(recaptchaValue)
+        
         const templateParams = {
             nom,
             mail,
             sujet,
             message,
         };
+        
+        console.log(recaptchaValue)
+        console.log(templateParams)
 
         if (verifiedRecaptcha) {
             emailjs.sendForm('un-an-de-couleurs', 'discussion-mail', templateParams, 'user_vjzPkHn9KPDGGjFZL8Lht')
