@@ -100,7 +100,6 @@ const Sale = ( {data} ) => {
                                 sale={sale.sale_price}
                                 color={sale.color}
                                 css={saleStyles.desc}
-                                modifier={true}
                                 show={toggle}
                             />
                         </div>

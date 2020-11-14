@@ -102,16 +102,5 @@
 
 .copyright {
     padding: $spacing-xs;
-    font-family: $font-text;
-    font-size: 12px;
-    font-weight: 300;
     text-align: center;
-
-    @include mq(tablet) {
-        font-size: 13px;
-    }
-
-    @include mq(desktop) {
-        font-size: 14px;
-    }
 }

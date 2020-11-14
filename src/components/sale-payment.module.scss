@@ -4,13 +4,37 @@
 .container {
     display: flex;
     flex-direction: column;
-    background-color: $black;
-    padding: $spacing-l $spacing-s;
+    padding: $spacing-xxl $spacing-m $spacing-xl;
     justify-content: center;
     max-width: 500px;
     margin: 0 auto;
 
     @include mq(tablet) {
-        padding: $spacing-xl $spacing-s;
+        padding: $spacing-xl $spacing-m;
+        justify-content: left;
+    }
+}
+
+.title {
+    text-align: center;
+
+    @include mq(tablet) {
+        text-align: left;
+    }
+}
+
+.divider {
+    margin: $spacing-m auto;
+
+    @include mq(tablet) {
+        margin: $spacing-m 0;
+    }
+}
+
+.submit {
+    margin: $spacing-l auto 0;
+
+    @include mq(tablet) {
+        margin: $spacing-l 0 0;
     }
 }

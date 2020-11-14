@@ -26,7 +26,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={footerStyles.divcontainer}>
-                <p className={footerStyles.copyright}>Réalisé par Olivier Keutgens. Tous droits réservés. ©2020</p>
+                <p className={`text-very-small ${footerStyles.copyright}`}>Réalisé par Olivier Keutgens. Tous droits réservés. ©2020</p>
             </div>
         </footer>
     )
