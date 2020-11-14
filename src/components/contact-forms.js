@@ -24,6 +24,7 @@ const ContactForms = () => {
             mail,
             sujet,
             message,
+            'g-recaptcha-response': recaptchaValue
         };
 
         console.log(recaptchaValue)
