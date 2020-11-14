@@ -25,7 +25,7 @@ const ContactForms = () => {
             sujet,
             message,
         };
-        
+
         console.log(recaptchaValue)
         console.log(templateParams)
 
@@ -66,7 +66,7 @@ const ContactForms = () => {
                     <input className="form-input text-form" type="text" name="sujet" value={sujet} onChange={(e) => setSujet(e.target.value)} placeholder="Sujet" required/>
                     <textarea className="form-input text-form" name="message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" required/>
                     <div className={contactFormsStyles.recaptcha}>
-                        <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.RECAPTCHA_KEY} onChange={() => setVerifiedRecaptcha(true)} />
+                        <ReCAPTCHA ref={recaptchaRef} sitekey="6LdRk94ZAAAAAEshlG8jmWjZH6rRkcCl41ET0FuN" onChange={() => setVerifiedRecaptcha(true)} />
                     </div>
                     <div className="button--outside bg-color-cycle">
                         <input className="button--inside" type="submit" value="Envoyer"/>
