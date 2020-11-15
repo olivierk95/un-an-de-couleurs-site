@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import emailjs from "emailjs-com"
 import { graphql } from "gatsby"
 import ArtpieceSlider from "../components/artpiece-slider"
@@ -49,17 +49,45 @@ const Sale = ( {data} ) => {
     const previousPageSlug = currentPageIndex === 0 ? false : `/boutique/${string_to_slug(pages[currentPageIndex - 1].title)}`;
     const nextPageSlug = currentPageIndex === pages.length - 1 ? false : `/boutique/${string_to_slug(pages[currentPageIndex + 1].title)}`;
     
+    const [ verifiedRecaptcha, setVerifiedRecaptcha ] = useState(false)
+    const [ nom, setNom ] = useState('')
+    const [ mail, setMail ] = useState('')
+    const [ prix, setPrix ] = useState('')
+    const [ adresse, setAdresse ] = useState('')
+    const [ message, setMessage ] = useState('')
+
+    const recaptchaRef = React.createRef()
+
     function orderArticle(e) {
         e.preventDefault();
-        e.target.push({article: sale.title})
 
-        emailjs.sendForm('un-an-de-couleurs', 'commande-mail', e.target, 'user_vjzPkHn9KPDGGjFZL8Lht')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            })
-            e.target.reset()
+        let templateParams = {
+            article: sale.title,
+            nom,
+            mail,
+            prix: sale.sale_price? sale.sale_price : prix,
+            adresse,
+            message,
+            'g-recaptcha-response': recaptchaRef.current.getValue()
+        }
+
+        console.log(templateParams)
+
+        if(verifiedRecaptcha) {
+            emailjs.send('un-an-de-couleurs', 'commande-mail', templateParams, 'user_vjzPkHn9KPDGGjFZL8Lht')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                })
+                
+                setNom('')
+                setPrix('')
+                setVerifiedRecaptcha(false)
+                setAdresse('')
+                setMessage('')
+                setMail('')
+        }
     }
 
     const {isShowing, toggle} = useModal();
@@ -112,6 +140,13 @@ const Sale = ( {data} ) => {
                         title={sale.title}
                         isShowing={isShowing}
                         hide={toggle}
+                        setVerifiedRecaptcha={setVerifiedRecaptcha}
+                        recaptchaRef={recaptchaRef}
+                        nom={nom} setNom={setNom}
+                        mail={mail} setMail={setMail}
+                        adresse={adresse} setAdresse={setAdresse}
+                        prix={prix} setPrix={setPrix}
+                        message={message} setMessage={setMessage}
                         />
                 </section>       
             </div>

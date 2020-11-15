@@ -31,6 +31,19 @@
     }
 }
 
+.recaptcha {
+    border: $border-normal;
+    box-sizing: border-box;
+    background: none;
+    margin-bottom: $spacing-m;
+    outline: none;
+    width: 100%;
+    
+    &:focus, &:hover {
+        border-color: $blue;
+    }
+}
+
 .submit {
     margin: $spacing-l auto 0;
 
