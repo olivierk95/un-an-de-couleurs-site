@@ -71,8 +71,6 @@ const Sale = ( {data} ) => {
             'g-recaptcha-response': recaptchaRef.current.getValue()
         }
 
-        console.log(templateParams)
-
         if(verifiedRecaptcha) {
             emailjs.send('un-an-de-couleurs', 'commande-mail', templateParams, 'user_vjzPkHn9KPDGGjFZL8Lht')
                 .then((result) => {
@@ -87,6 +85,7 @@ const Sale = ( {data} ) => {
                 setAdresse('')
                 setMessage('')
                 setMail('')
+                recaptchaRef.reset()
         }
     }
 
