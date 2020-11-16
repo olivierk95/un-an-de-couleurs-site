@@ -35,7 +35,6 @@ const Artpiece = ( {data} ) => {
                     />
                     <ArtpieceImages 
                         galeriePic={data.artpiece.galerie_cover}
-                        boutiquePic={data.artpiece.boutique_cover}
                         sliderPics={data.artpiece.slider}
                     />
                     <ArtpieceInfo 

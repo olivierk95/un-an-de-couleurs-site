@@ -111,7 +111,6 @@ const Sale = ( {data} ) => {
                         </div>
                         <div className={saleStyles.content}>
                             <ArtpieceImages 
-                                galeriePic={sale.galerie_cover}
                                 boutiquePic={sale.boutique_cover}
                                 sliderPics={sale.slider}
                                 color={sale.color}
