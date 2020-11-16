@@ -30,7 +30,6 @@ const Artpiece = ( {data} ) => {
                     <ArtpieceSlider
                         css={artpieceStyles.slider}
                         galeriePic={data.artpiece.galerie_cover}
-                        boutiquePic={data.artpiece.boutique_cover}
                         sliderPics={data.artpiece.slider}
                         vertical={false}
                     />

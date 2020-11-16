@@ -39,7 +39,7 @@ header a {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
-    margin-bottom: $spacing-l;
+    margin-bottom: $spacing-m;
 
     @include mq(tablet) {
         font-size: 22px;
@@ -47,6 +47,7 @@ header a {
 
     @include mq(desktop) {
         font-size: 25px;
+        margin-bottom: $spacing-l;
     }
 
     &[class*="--white"] {

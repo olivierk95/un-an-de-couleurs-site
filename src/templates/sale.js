@@ -99,7 +99,6 @@ const Sale = ( {data} ) => {
                 <ArtpieceSlider
                     css={saleStyles.slider} 
                     boutiquePic={sale.boutique_cover}
-                    galeriePic={sale.galerie_cover}
                     sliderPics={sale.slider}
                     color={sale.color}
                     vertical={true}

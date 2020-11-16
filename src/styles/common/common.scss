@@ -46,9 +46,17 @@
 
 .gallery-display {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-auto-flow: dense;
     padding-top: $spacing-xxl;
+
+    @include mq(tablet) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    @include mq(desktop) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 
 .grid-column-2.grid-row-1 {
@@ -67,7 +75,7 @@
 .grid-column-1.grid-row-2 {
 
     .gatsby-image-wrapper > div {
-        @include mq(null, xs) {
+        @include mq(null, desktop) {
             padding-bottom: 100% !important;
         }
     }

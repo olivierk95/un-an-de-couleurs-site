@@ -1,4 +1,5 @@
 @import "../styles/utils/variables";
+@import "../styles/vendors/mq";
 
 .title {
     text-align: center;
@@ -16,6 +17,7 @@
     grid-template-columns: 1;
     grid-template-rows: 1;
     text-decoration: none;
+    position: relative;
 
     &:hover .info {
         transform: translateY(0);
@@ -28,16 +30,31 @@
     grid-row: 1 / -1;
 }
 
+.caption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: $spacing-xs $spacing-s;
+
+    @include mq(desktop) {
+        display: none;
+    }
+}
+
 .info {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: $spacing-m;
-    transform: translateY(100%);
-    transition: .3s $ease-in-quad;
-    opacity: 0;
+    display: none;
+    
+    @include mq(desktop) {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-m;
+        transform: translateY(100%);
+        transition: .3s $ease-in-quad;
+        opacity: 0;
+    }
 }

@@ -27,8 +27,17 @@ const Gallery = (props) => {
   return (
     <>
         {props.data.map((cover) =>
-            <Link to={cover.day? `/jour-${cover.day}` : `/boutique/${string_to_slug(cover.title)}`} className={`${galleryStyles.container} grid-column-${cover.cover_width ? cover.cover_width : 1} grid-row-${cover.cover_height ? cover.cover_height : 1}`} key={cover.id}>
+          <Link to={cover.day? `/jour-${cover.day}` : `/boutique/${string_to_slug(cover.title)}`} className={`${galleryStyles.container} grid-column-${cover.cover_width ? cover.cover_width : 1} grid-row-${cover.cover_height ? cover.cover_height : 1}`} key={cover.id}>
                 <Img className={galleryStyles.cover} fluid={cover.galerie_cover && cover.cover_width ? { ...cover.galerie_cover.childImageSharp.fluid, aspectRatio: cover.cover_width/cover.cover_height} : { ...cover.boutique_cover.childImageSharp.fluid, aspectRatio: 1/1}} alt={cover.title}/>
+                <div className={galleryStyles.caption} style={{backgroundColor: cover.color}}>
+                    {cover.support ? 
+                        <p className={`${galleryStyles.characteristics} text-small--white`}>{`J${cover.day}`}</p> :
+                        <p className={`${galleryStyles.characteristics} text-small--white`}>
+                          {cover.cost_material && <>Prix libre</>}
+                          {cover.sale_price && `${cover.sale_price}€`}
+                        </p>
+                    }
+                </div>
                 <div className={galleryStyles.info} style={{backgroundColor: cover.color}}>
                     {cover.day ? 
                       <h2 className={`${galleryStyles.title} h2-title`}>{`Jour ${cover.day}`}</h2> :
@@ -36,14 +45,14 @@ const Gallery = (props) => {
                     }
                     <hr className="divider"/>
                     {cover.support ? 
-                      <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.support} - {cover.technique}</p> :
+                      <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.title}</p> :
                       <p className={`${galleryStyles.characteristics} text-small--white`}>
                         {cover.cost_material && <><span>Prix libre</span><br/><span>{`coût du matériel: ${cover.cost_material}€`}</span></>}
                         {cover.sale_price && `${cover.sale_price}€`}
                       </p>
                     }
                 </div>
-            </Link>
+          </Link>
         )}
     </>
   )
