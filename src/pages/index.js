@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../templates/layout"
 import { graphql, useStaticQuery} from "gatsby"
 import Gallery from "../components/gallery"
+import Head from "../components/head"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -30,6 +31,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <Head title="Galerie" />
       <section className="gallery-display">
         <Gallery data={data.covers.nodes}/>
       </section>

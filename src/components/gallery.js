@@ -40,14 +40,14 @@ const Gallery = (props) => {
                 </div>
                 <div className={galleryStyles.info} style={{backgroundColor: cover.color}}>
                     {cover.day ? 
-                      <h2 className={`${galleryStyles.title} h2-title`}>{`Jour ${cover.day}`}</h2> :
+                      <h2 className={`${galleryStyles.title} h2-title`}>{`J${cover.day}`}</h2> :
                       <h2 className={`${galleryStyles.title} h3-title`}>{cover.title}</h2>
                     }
                     <hr className="divider"/>
                     {cover.support ? 
                       <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.title}</p> :
                       <p className={`${galleryStyles.characteristics} text-small--white`}>
-                        {cover.cost_material && <><span>Prix libre</span><br/><span>{`coût du matériel: ${cover.cost_material}€`}</span></>}
+                        {cover.cost_material && <><span>Prix libre</span><br/><span>{`(coût du matériel: ${cover.cost_material}€)`}</span></>}
                         {cover.sale_price && `${cover.sale_price}€`}
                       </p>
                     }

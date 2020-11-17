@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../templates/layout"
 import { graphql, useStaticQuery} from "gatsby"
 import Gallery from "../components/gallery"
+import Head from "../components/head"
 
 const BoutiquePage = () => {
   const data = useStaticQuery(graphql`
@@ -54,6 +55,7 @@ const BoutiquePage = () => {
 
   return (
     <Layout>
+      <Head title="boutique" />
       <section className="gallery-display">
         <Gallery data={covers}/>
       </section>

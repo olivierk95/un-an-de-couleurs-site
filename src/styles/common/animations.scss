@@ -70,6 +70,45 @@ $color-cycle-anim-attr: 100s linear infinite;
     }
 }
 
+//LOGO ANIMATION
+
+.logo-animation {
+    animation: logo-animation $color-cycle-anim-attr;
+    transform-origin: 42% 50%;
+}
+
+@keyframes logo-animation {
+    from {
+        fill: $color-cycle-1;
+        transform: rotate(0deg);
+    }
+    12% {
+        fill: $color-cycle-2;
+    }
+    25% {
+        fill: $color-cycle-3;
+    }
+    37% {
+        fill: $color-cycle-4;
+    }
+    50% {
+        fill: $color-cycle-5;
+    }
+    62% {
+        fill: $color-cycle-6;
+    }
+    75% {
+        fill: $color-cycle-7;
+    }
+    87% {
+        fill: $color-cycle-8;
+    }
+    to {
+        transform: rotate(-360deg);
+        fill: $color-cycle-1;
+    }
+}
+
 .fill-color-cycle {
     animation: fill-color-cycle $color-cycle-anim-attr;
 }

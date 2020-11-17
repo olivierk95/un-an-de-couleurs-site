@@ -6,6 +6,7 @@ import ArtpieceSlider from "../components/artpiece-slider"
 import ArtpieceImages from "../components/artpiece-images"
 import ArtpieceInfo from "../components/artpiece-info"
 import ExitButton from "../components/exit-button"
+import Head from "../components/head"
 
 import "../styles/main.scss"
 
@@ -18,6 +19,7 @@ const Artpiece = ( {data} ) => {
     
     return (
         <>
+            <Head title={`Jour ${data.artpiece.day}`} />
             <ExitButton url="/" backgroundColor={data.artpiece.color} />
             <ArrowsNav previousSlug={previousPage && `/jour-${previousPage}`} previous={`Jour ${previousPage}`} nextSlug={nextPage && `/jour-${nextPage}`} next={`Jour ${nextPage}`} style={artpieceStyles.navigation} backgroundColor={data.artpiece.color} />
             <section className={artpieceStyles.body} style={{backgroundColor: data.artpiece.color}}>

@@ -3,6 +3,7 @@ import Layout from "../templates/layout"
 import {graphql, useStaticQuery} from "gatsby"
 import Img from "gatsby-image"
 import ContactForms from "../components/contact-forms"
+import Head from "../components/head"
 
 import InstagramIcon from "../assets/instagram-icon.svg"
 import proposStyles from "./propos.module.scss"
@@ -21,6 +22,7 @@ const ProposPage = () => {
     `)
     return (
         <Layout>
+            <Head title="A propos" />
             <div className={proposStyles.container}>
                 <section className={proposStyles.projet}>
                     <div className={proposStyles.sectioncontainer}>

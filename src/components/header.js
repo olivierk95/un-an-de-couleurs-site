@@ -10,7 +10,6 @@ const Header = () => {
                 <div className={headerStyles.logo}>
                     <Link className={headerStyles.logolink} to="/"><Logo /></Link>
                 </div>
-                <h2 className={headerStyles.signature}>Par Organik</h2>
                 <nav className={headerStyles.nav}>
                     <ul className={headerStyles.navlist}>
                         <li><Link to="/" className="font-color-cycle" activeClassName="is-active">Galerie</Link></li>

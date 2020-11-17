@@ -1,0 +1,12 @@
+@import '../styles/utils/variables';
+
+.container {
+    padding: $spacing-xxxl $spacing-l;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    margin: 0 auto;
+}
