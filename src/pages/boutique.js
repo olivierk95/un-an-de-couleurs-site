@@ -55,7 +55,7 @@ const BoutiquePage = () => {
 
   return (
     <Layout>
-      <Head title="boutique" />
+      <Head title="boutique" description="Bienvenue à la boutique d'Organik. Peintures, prints, tableaux et autre à prix libres (rarement fixés). Décorer son lieu de vie avec ses couleurs, c'est aussi soutenir ce beau projet."/>
       <section className="gallery-display">
         <Gallery data={covers}/>
       </section>

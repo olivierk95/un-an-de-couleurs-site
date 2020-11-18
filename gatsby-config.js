@@ -15,6 +15,17 @@ module.exports = {
     url: 'https://unandecouleurs.be'
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "G-8WD3G3JPFP",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+        // Setting this parameter is optional
+        anonymize: true,
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     {

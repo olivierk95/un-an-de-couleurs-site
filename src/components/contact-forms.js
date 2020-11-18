@@ -43,7 +43,7 @@ const ContactForms = () => {
             <div className="content-container">
                 <h4 className="h3-title">Discussion par mail</h4>
                 <form onSubmit={sendEmail}>
-                    <input className="form-input text-form" type="text" name="nom" placeholder="Votre doux nom" required/>
+                    <input className="form-input text-form" type="text" name="nom" placeholder="Votre joli nom" required/>
                     <input className="form-input text-form" type="email" name="mail" placeholder="Adresse mail" required/>
                     <input className="form-input text-form" type="text" name="sujet" placeholder="Sujet" required/>
                     <textarea className="form-input text-form" name="message" placeholder="Message" required/>

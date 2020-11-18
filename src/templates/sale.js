@@ -94,7 +94,7 @@ const Sale = ( {data} ) => {
 
     return (
         <>
-            <Head title={sale.title} image={sale.boutique_cover.publicURL} />
+            <Head title={sale.title} image={sale.boutique_cover.publicURL} description={`${sale.title}. ${sale.description && sale.description} ${sale.support} - ${sale.technique}. ${sale.sale_price || sale.cost_material}`} />
             <ExitButton url="/boutique" backgroundColor={sale.color} modifier={true} />
             <ArrowsNav previousSlug={previousPageSlug} previous={false} nextSlug={nextPageSlug} next={false} style={saleStyles.navigation} modifier={true} backgroundColor={sale.color} />
             <div className={saleStyles.body}>

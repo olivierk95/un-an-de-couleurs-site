@@ -1,4 +1,3 @@
-import { useStaticQuery } from 'gatsby';
 import { useState } from 'react';
 
 const useModal = () => {

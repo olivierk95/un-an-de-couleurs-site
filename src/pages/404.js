@@ -4,7 +4,6 @@ import Layout from '../templates/layout'
 import Head from "../components/head"
 
 import notFoundStyles from './404.module.scss'
-import { Helmet } from 'react-helmet'
 
 const NotFound = () => {
     return (

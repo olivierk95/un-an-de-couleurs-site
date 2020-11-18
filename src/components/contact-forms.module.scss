@@ -6,7 +6,7 @@
     background: none;
     margin-bottom: $spacing-m;
     outline: none;
-    width: 100%;
+    display: table;
     
     &:focus, &:hover {
         border-color: $blue;

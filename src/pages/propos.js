@@ -22,7 +22,7 @@ const ProposPage = () => {
     `)
     return (
         <Layout>
-            <Head title="A propos" />
+            <Head title="A propos" description="Olivier Keutgens alias Organik est un jeune artiste liégeois. Passionné de graphisme et d'art urbain, il cherche à transmettre sa passion, sa simplicité et sa bienveillance au travers de son projet 'Un an de Couleurs'."/>
             <div className={proposStyles.container}>
                 <section className={proposStyles.projet}>
                     <div className={proposStyles.sectioncontainer}>

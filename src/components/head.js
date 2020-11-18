@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import favicon from '../assets/un-an-de-couleurs-logo-icon.svg'
 
 const Head = (props) => {
     const data = useStaticQuery(graphql`
