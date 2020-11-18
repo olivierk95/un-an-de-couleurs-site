@@ -9,7 +9,10 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: 'Un an de Couleurs',
-    author: 'Olivier Keutgens',
+    author: 'Organik',
+    description: "Projet de peinture de l'artiste liégeois Organik. Une oeuvre quotidienne pour ajouter des couleurs à une année bien grise. Fresques, tableaux, illustrations.",
+    image: '/src/assets/photo-profil.jpg',
+    url: 'https://unandecouleurs.be'
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -20,6 +23,18 @@ module.exports = {
         name: `images`,
         path: path.join(__dirname, `src`, `assets`),
       },
+    },
+    {
+      resolve:`gatsby-plugin-manifest`,
+      options: {
+        name: `Un an de couleurs`,
+        short_name: `Un an de couleurs`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FFFFFF`,
+        display: `standalone`,
+        icon: `src/assets/un-an-de-couleurs-logo-icon.svg`,
+      }
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -39,31 +54,33 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `BioRhyme Expanded`,
-            variants: [`200`, `300`, `400`, `700`, `800`]
-          },
-          {
-            family: `Kumar One Outline`,
-          },
-          {
-            family: `Kumar One`,
-          },
-          {
-            family: `Limelight`,
-          },
-          {
-            family: `Montserrat`,
-            variants: [`100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`,]
-          },
-          {
-            family: `BioRhyme`,
-            variants: [`200`, `300`, `400`, `700`, `800`]
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: `BioRhyme Expanded`,
+              variants: [`200`, `300`, `400`, `700`, `800`]
+            },
+            {
+              family: `Kumar One Outline`,
+            },
+            {
+              family: `Kumar One`,
+            },
+            {
+              family: `Limelight`,
+            },
+            {
+              family: `Montserrat`,
+              variants: [`100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`,]
+            },
+            {
+              family: `BioRhyme`,
+              variants: [`200`, `300`, `400`, `700`, `800`]
+            },
+          ],
+        },
       },
     }
   ],

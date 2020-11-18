@@ -48,7 +48,7 @@ const ContactForms = () => {
                     <input className="form-input text-form" type="text" name="sujet" placeholder="Sujet" required/>
                     <textarea className="form-input text-form" name="message" placeholder="Message" required/>
                     <div className={contactFormsStyles.recaptcha}>
-                        <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.GATSBY_RECAPTCHA_KEY} onChange={() => setVerifiedRecaptcha(true)} />
+                        <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.GATSBY_RECAPTCHA_KEY} onChange={() => setVerifiedRecaptcha(true)} size="compact"/>
                     </div>
                     <div className="button--outside bg-color-cycle">
                         <input className="button--inside" type="submit" value="Envoyer"/>

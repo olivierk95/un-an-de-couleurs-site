@@ -2,6 +2,8 @@
 @import "../styles/vendors/mq";
 
 .container {
+    margin-top: $spacing-xxl;
+
     @include mq(tablet) {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -18,10 +20,11 @@
 }
 
 .projet {
-    padding: $spacing-xxxl $spacing-s $spacing-xl;
+    padding: $spacing-xl $spacing-s;
+    border-top: $border-normal;
 
     @include mq(tablet) {
-        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+        padding: $spacing-xxl $spacing-m;
     }
     
     @include mq(desktop) {
@@ -40,10 +43,8 @@
     }
 
     @include mq(desktop) {
-        padding: $spacing-xxxl $spacing-m $spacing-xxl;
         grid-row: 1;
         grid-column: 2;
-        border-top: none;
         border-left: $border-normal;
         border-right: $border-normal;
     }
@@ -55,9 +56,8 @@
 
     @include mq(tablet) {
         grid-column: 2;
-        border-top: none;
         border-left: $border-normal;
-        padding: $spacing-xxxl $spacing-m $spacing-xxl;
+        padding: $spacing-xxl $spacing-m;
     }
     @include mq(desktop) {
         grid-column: 3;

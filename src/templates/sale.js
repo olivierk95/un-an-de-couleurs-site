@@ -94,7 +94,7 @@ const Sale = ( {data} ) => {
 
     return (
         <>
-            <Head title={sale.title} />
+            <Head title={sale.title} image={sale.boutique_cover.publicURL} />
             <ExitButton url="/boutique" backgroundColor={sale.color} modifier={true} />
             <ArrowsNav previousSlug={previousPageSlug} previous={false} nextSlug={nextPageSlug} next={false} style={saleStyles.navigation} modifier={true} backgroundColor={sale.color} />
             <div className={saleStyles.body}>
@@ -167,13 +167,7 @@ export const pageQuery = graphql`
             sale_price
             cost_material
             boutique_cover {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            galerie_cover {
+                publicURL
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -200,6 +194,7 @@ export const pageQuery = graphql`
             sale_price
             cost_material
             boutique_cover {
+                publicURL
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid

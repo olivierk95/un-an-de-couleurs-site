@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="900px" height="900px" viewBox="0 0 900 900" enable-background="new 0 0 900 900" xml:space="preserve">
+<path id="left-eye" fill="none" stroke="#000000" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M309.316,147.595c0,0-85.068-23.727-140.637,75.471"/>
+<path id="face" fill="none" stroke="#000000" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M363.411,29c22.854-51.676-204.013,443.22-199.336,470.485c8.181,47.696,145.11,64.903,198.247,27.265s3.796-124.903-34.159-73.679
+	c-22.663,30.586-19.596,205.109-11.755,301.287c0,0,28.505-56.481,46.742-58.688c17.845-2.159,31.98,47.831,31.98,47.831
+	s50.911-66.41,74.183-73.145c50.706-14.675,152.481,93.839,152.481,93.839c-136.734,29.42-324.237,27.224-324.237,27.224
+	s126.714,156.216,225.614,40.953"/>
+<path id="right-eye" fill="none" stroke="#000000" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M469.313,162.464c56.662-91.71,184.666-97.805,218.191,24.832"/>
+<circle id="cheek" fill="#E90600" cx="669.372" cy="463.611" r="66.625"/>
+</svg>

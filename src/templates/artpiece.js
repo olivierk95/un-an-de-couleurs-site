@@ -19,7 +19,7 @@ const Artpiece = ( {data} ) => {
     
     return (
         <>
-            <Head title={`Jour ${data.artpiece.day}`} />
+            <Head title={`Jour ${data.artpiece.day}`} image={data.artpiece.galerie_cover.publicURL}/>
             <ExitButton url="/" backgroundColor={data.artpiece.color} />
             <ArrowsNav previousSlug={previousPage && `/jour-${previousPage}`} previous={`Jour ${previousPage}`} nextSlug={nextPage && `/jour-${nextPage}`} next={`Jour ${nextPage}`} style={artpieceStyles.navigation} backgroundColor={data.artpiece.color} />
             <section className={artpieceStyles.body} style={{backgroundColor: data.artpiece.color}}>
@@ -68,6 +68,7 @@ export const pageQuery = graphql`
             date
             status
             galerie_cover {
+                publicURL
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid
@@ -80,13 +81,6 @@ export const pageQuery = graphql`
                         fluid {
                             ...GatsbyImageSharpFluid
                         }
-                    }
-                }
-            }
-            boutique_cover {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
                     }
                 }
             }
