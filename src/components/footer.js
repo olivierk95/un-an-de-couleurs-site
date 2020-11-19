@@ -14,7 +14,7 @@ const Footer = () => {
                 </div>
                 <div className={footerStyles.social}>
                     <div className={footerStyles.divcontainer}>
-                        <p className={footerStyles.subtitle}>Espionnez-moi</p> 
+                        <p className={footerStyles.subtitle}>S'abonner</p> 
                         <a href="https://www.instagram.com/organik.artist/" target="_blank" rel="noreferrer" className={footerStyles.link}><InstagramIcon className={footerStyles.icon} /></a>
                     </div>
                 </div>

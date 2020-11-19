@@ -88,7 +88,7 @@ const ProposPage = () => {
                         <p className={`text-normal ${proposStyles.contactDetails}`} style={{paddingTop: "10px"}}>Origine: Olne (Liège), Belgique</p>
                         <ContactForms />
                         <div className="content-container">
-                            <h4 className="h3-title">Espionnez-moi</h4> 
+                            <h4 className="h3-title">S'abonner</h4> 
                             <a href="https://www.instagram.com/organik.artist/" target="_blank" rel="noreferrer"><InstagramIcon className={proposStyles.icon + ` fill-color-cycle icon-link`} /></a>
                         </div>
                     </div>
