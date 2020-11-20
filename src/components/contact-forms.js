@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
+import Modal from "./modal"
+import useModal from "../hooks/useModal";
 
 import contactFormsStyles from "./contact-forms.module.scss"
 
@@ -10,18 +12,24 @@ const ContactForms = () => {
     const [ verifiedRecaptcha, setVerifiedRecaptcha ] = useState(false)
     const recaptchaRef = React.createRef()
 
+    const [ sendMailSuccess, setSendMailSuccess ] = useState(false)
+    const {isShowing, toggle} = useModal();
+
     function sendEmail(e) {
         e.preventDefault();
 
         if (verifiedRecaptcha) {
             emailjs.sendForm('un-an-de-couleurs', 'discussion-mail', e.target, 'user_vjzPkHn9KPDGGjFZL8Lht')
                 .then((result) => {
-                    console.log(result.text);
+                    setSendMailSuccess(true)
+                    toggle();
+                    console.log(result.text)
                 }, (error) => {
+                    toggle();
                     console.log(error.text);
                 })
                 e.target.reset()
-                recaptchaRef.reset()
+                setSendMailSuccess(false)
         }
     }
 
@@ -64,6 +72,7 @@ const ContactForms = () => {
                     </div>
                 </form>
             </div> */}
+            <Modal isShowing={isShowing} objec="message" hide={toggle} success={sendMailSuccess}/>
         </>      
     )
 }

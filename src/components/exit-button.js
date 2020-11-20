@@ -2,23 +2,23 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import exitButtonStyles from "./exit-button.module.scss"
-import arrowsNavStyles from "./arrows-nav.module.scss"
+import arrowsNavStyles from "./ui/arrows-nav.module.scss"
 
-const ExitButton = (props) => {
+const ExitButton = ({desc, modifier, hide, url, backgroundColor, absolute}) => {
     return (
         <>
-            {props.url? 
-                <Link to={props.url} className={props.modifier ? exitButtonStyles.quit__modified : exitButtonStyles.quit}>
-                    <div className={exitButtonStyles.button} style={{backgroundColor: props.backgroundColor, border: props.modifier? "none" : '3px solid white'}}>
+            {url? 
+                <Link to={url} className={modifier ? exitButtonStyles.quit__modified : exitButtonStyles.quit}>
+                    <div className={exitButtonStyles.button} style={{backgroundColor: backgroundColor, border: modifier? "none" : '3px solid white'}}>
                         <p className={exitButtonStyles.cross}>X</p>
                     </div>
-                    {props.desc && <p className={arrowsNavStyles.linkdesc}>{props.desc}</p> }
+                    {desc && <p className={arrowsNavStyles.linkdesc}>{desc}</p> }
                 </Link> : 
-                <div onClick={props.hide} className={props.modifier ? exitButtonStyles.quit__modified : exitButtonStyles.quit}>
-                    <div className={exitButtonStyles.button} style={{backgroundColor: props.backgroundColor, border: props.modifier? "none" : '3px solid white'}}>
+                <div onClick={hide} className={modifier ? exitButtonStyles.quit__modified : exitButtonStyles.quit} style={{position: absolute? 'absolute' : 'fixed'}}>
+                    <div className={exitButtonStyles.button} style={{backgroundColor: backgroundColor, border: modifier? "none" : '3px solid white'}}>
                         <p className={exitButtonStyles.cross}>X</p>
                     </div>
-                    {props.desc && <p className={arrowsNavStyles.linkdesc}>{props.desc}</p> }
+                    {desc && <p className={arrowsNavStyles.linkdesc}>{desc}</p> }
                 </div>
             }           
         </>

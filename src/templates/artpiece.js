@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import artpieceStyles from "./artpiece.module.scss"
-import ArrowsNav from "../components/arrows-nav"
+import ArrowsNav from "../components/ui/arrows-nav"
 import ArtpieceSlider from "../components/artpiece-slider"
 import ArtpieceImages from "../components/artpiece-images"
 import ArtpieceInfo from "../components/artpiece-info"

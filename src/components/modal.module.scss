@@ -1,0 +1,102 @@
+@import "../styles/utils/variables";
+
+.background {
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: $black-transparent-light;
+    cursor: pointer;
+}
+
+.modal {
+    padding: $spacing-xl $spacing-l $spacing-l;
+    background-color: $white;
+    position: relative;
+    max-width: 500px;
+    display: grid;
+    justify-content: center;
+}
+
+.close {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: $spacing-xs;
+    transition: .3s $ease-in-quad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: $spacing-xs;
+    text-decoration: none;
+    background-color: $white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $black;
+
+        .cross {
+            color: $white;
+        }
+    }
+}
+
+.cross{
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+    color: $black;
+    transition: .3s $ease-in-quad;
+}
+
+.success {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: $spacing-m auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs;
+    text-decoration: none;
+    background-color: $green;
+}
+
+.fail {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: $spacing-m auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs;
+    text-decoration: none;
+    background-color: $red;
+}
+
+.iconText {
+    font-family: $font-primary;
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+    color: $white;
+    transition: .3s $ease-in-quad;
+}
+
+.cta {
+    text-align: center;
+    margin-top: $spacing-l;
+}

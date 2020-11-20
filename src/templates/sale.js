@@ -4,11 +4,12 @@ import { graphql } from "gatsby"
 import ArtpieceSlider from "../components/artpiece-slider"
 import SaleInfo from "../components/sale-info"
 import ArtpieceImages from "../components/artpiece-images"
-import ArrowsNav from "../components/arrows-nav"
+import ArrowsNav from "../components/ui/arrows-nav"
 import ExitButton from '../components/exit-button'
 import SalePayment from '../components/sale-payment'
 import useModal from '../hooks/useModal'
 import Head from "../components/head"
+import Modal from "../components/modal"
 
 import "../styles/main.scss"
 import saleStyles from "./sale.module.scss"
@@ -59,6 +60,10 @@ const Sale = ( {data} ) => {
 
     const recaptchaRef = React.createRef()
 
+    const [ sendMailSuccess, setSendMailSuccess ] = useState(false)
+    const {isShowingPayment, togglePayment} = useModal();
+    const {isShowingModal, toggleModal} = useModal();
+
     function orderArticle(e) {
         e.preventDefault();
 
@@ -74,11 +79,15 @@ const Sale = ( {data} ) => {
 
         if(verifiedRecaptcha) {
             emailjs.send('un-an-de-couleurs', 'commande-mail', templateParams, 'user_vjzPkHn9KPDGGjFZL8Lht')
-                .then((result) => {
-                    console.log(result.text);
-                }, (error) => {
-                    console.log(error.text);
-                })
+            .then((result) => {
+                setSendMailSuccess(true)
+                toggleModal();
+                togglePayment();
+                console.log(result.text)
+            }, (error) => {
+                toggleModal();
+                console.log(error.text);
+            })
                 
                 setNom('')
                 setPrix('')
@@ -86,11 +95,8 @@ const Sale = ( {data} ) => {
                 setAdresse('')
                 setMessage('')
                 setMail('')
-                recaptchaRef.reset()
         }
     }
-
-    const {isShowing, toggle} = useModal();
 
     return (
         <>
@@ -127,7 +133,7 @@ const Sale = ( {data} ) => {
                                 sale={sale.sale_price}
                                 color={sale.color}
                                 css={saleStyles.desc}
-                                show={toggle}
+                                show={togglePayment}
                             />
                         </div>
                     </div>
@@ -137,8 +143,8 @@ const Sale = ( {data} ) => {
                         sale={sale.sale_price} 
                         color={sale.color}
                         title={sale.title}
-                        isShowing={isShowing}
-                        hide={toggle}
+                        isShowing={isShowingPayment}
+                        hide={togglePayment}
                         setVerifiedRecaptcha={setVerifiedRecaptcha}
                         recaptchaRef={recaptchaRef}
                         nom={nom} setNom={setNom}
@@ -147,7 +153,8 @@ const Sale = ( {data} ) => {
                         prix={prix} setPrix={setPrix}
                         message={message} setMessage={setMessage}
                         />
-                </section>       
+                </section> 
+                <Modal isShowing={isShowingModal} object="order" hide={toggleModal} success={sendMailSuccess}/>      
             </div>
         </>
     )
