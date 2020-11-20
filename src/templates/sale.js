@@ -61,8 +61,13 @@ const Sale = ( {data} ) => {
     const recaptchaRef = React.createRef()
 
     const [ sendMailSuccess, setSendMailSuccess ] = useState(false)
-    const {isShowingPayment, togglePayment} = useModal();
-    const {isShowingModal, toggleModal} = useModal();
+    const { isShowing, toggle } = useModal();
+    //////// Repetitive toggle modal
+    const [ showModal, setShowModal ] = useState(false);
+
+    function toggleModal() {
+        setShowModal(!showModal);
+    }
 
     function orderArticle(e) {
         e.preventDefault();
@@ -82,7 +87,7 @@ const Sale = ( {data} ) => {
             .then((result) => {
                 setSendMailSuccess(true)
                 toggleModal();
-                togglePayment();
+                toggle();
                 console.log(result.text)
             }, (error) => {
                 toggleModal();
@@ -133,7 +138,7 @@ const Sale = ( {data} ) => {
                                 sale={sale.sale_price}
                                 color={sale.color}
                                 css={saleStyles.desc}
-                                show={togglePayment}
+                                show={toggle}
                             />
                         </div>
                     </div>
@@ -143,18 +148,17 @@ const Sale = ( {data} ) => {
                         sale={sale.sale_price} 
                         color={sale.color}
                         title={sale.title}
-                        isShowing={isShowingPayment}
-                        hide={togglePayment}
+                        isShowing={isShowing}
+                        hide={toggle}
                         setVerifiedRecaptcha={setVerifiedRecaptcha}
                         recaptchaRef={recaptchaRef}
                         nom={nom} setNom={setNom}
                         mail={mail} setMail={setMail}
                         adresse={adresse} setAdresse={setAdresse}
                         prix={prix} setPrix={setPrix}
-                        message={message} setMessage={setMessage}
-                        />
+                        message={message} setMessage={setMessage} />
                 </section> 
-                <Modal isShowing={isShowingModal} object="order" hide={toggleModal} success={sendMailSuccess}/>      
+                <Modal isShowing={showModal} object="order" hide={toggleModal} success={sendMailSuccess}/>      
             </div>
         </>
     )
