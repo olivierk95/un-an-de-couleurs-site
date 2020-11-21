@@ -136,20 +136,24 @@ exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `
         type StrapiArtworks implements Node {
+            created_at: Date
             title: String
             description: String
             technique: String
             support: String
             sale_price: String
             cost_material: String
+            color: String
         }
         type StrapiSales implements Node {
+            created_at: Date
             title: String
             description: String
             technique: String
             support: String
             sale_price: String
             cost_material: String
+            color: String
         }
     `
     createTypes(typeDefs)
