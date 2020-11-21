@@ -18,7 +18,7 @@ const ArtpieceSlider = (props) => {
     } if (props.boutiquePic) {
         slides.push(props.boutiquePic.childImageSharp.fluid);
     } if (props.sliderPics) {
-        props.sliderPics.forEach (slidePic =>
+        props.sliderPics.forEach( slidePic =>
             slides.push(slidePic.localFile.childImageSharp.fluid)
         )
     }

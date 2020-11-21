@@ -146,7 +146,7 @@ exports.createSchemaCustomization = ({ actions }) => {
             color: String
             galerie_cover: File
             boutique_cover: File
-            slider: Slide
+            localFile: File
         }
         type StrapiSales implements Node {
             created_at: Date
@@ -158,9 +158,6 @@ exports.createSchemaCustomization = ({ actions }) => {
             cost_material: String
             color: String
             boutique_cover: File
-            slider: Slide
-        }
-        type Slide {
             localFile: File
         }
     `
