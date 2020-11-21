@@ -144,9 +144,9 @@ exports.createSchemaCustomization = ({ actions }) => {
             sale_price: String
             cost_material: String
             color: String
-            galerie_cover: {}
-            boutique_cover: {}
-            slider: {}
+            galerie_cover: File
+            boutique_cover: File
+            slider: File
         }
         type StrapiSales implements Node {
             created_at: Date
@@ -157,8 +157,8 @@ exports.createSchemaCustomization = ({ actions }) => {
             sale_price: String
             cost_material: String
             color: String
-            boutique_cover: {}
-            slider: {}
+            boutique_cover: File
+            slider: File
         }
     `
     createTypes(typeDefs)
