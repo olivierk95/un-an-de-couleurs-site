@@ -27,6 +27,9 @@ const ArtpieceInfo = (props) => {
     if (status === "acquerir") {
         status = "Disponible en boutique";
     }
+    else if (status === "ventegroupee") {
+        status = "En vente groupée en boutique";
+    }
     else if (status === "adjuge") {
         status = "Adjugé";
     }
@@ -70,6 +73,15 @@ const ArtpieceInfo = (props) => {
                     {props.status === "acquerir" &&
                         <div className={artpieceInfoStyles.cta}>
                             <Link to={`/boutique/${string_to_slug(props.title)}`} className={`button--outside button-link bg-color-cycle`}>
+                                <div className="button--inside">
+                                    Acquérir
+                                </div>
+                            </Link>
+                        </div>
+                    }
+                    {props.status === "ventegroupee" &&
+                        <div className={artpieceInfoStyles.cta}>
+                            <Link to={`/boutique/${string_to_slug(props.title_serie)}`} className={`button--outside button-link bg-color-cycle`}>
                                 <div className="button--inside">
                                     Acquérir
                                 </div>

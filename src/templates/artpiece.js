@@ -46,6 +46,7 @@ const Artpiece = ( {data} ) => {
                         status={data.artpiece.status}
                         date={data.artpiece.date}
                         title={data.artpiece.title}
+                        title_serie={data.artpiece.title_serie}
                         css={artpieceStyles.desc}
                     />
                 </div>
@@ -61,6 +62,7 @@ export const pageQuery = graphql`
         artpiece: strapiArtworks(id: {eq: $id}) {
             day
             title
+            title_serie
             technique
             support
             description

@@ -20,8 +20,8 @@ const SaleInfo = (props) => {
                 </>
             }
             <div className={saleInfoStyles.element}>
-                {props.cost && <p className="text-small">{`Prix libre (coût matériel: ${props.cost}€)`}</p> }
-                {props.sale && <p className="text-small">{`${props.sale}€`}</p> }
+                {props.cost && <p className="text-small">{`Prix libre (à vous de définir le prix qui vous semble juste)`}</p> }
+                {props.sale && <p className="text-small">{`${props.sale}€`}</p>}
                 {props.cost &&
                     <div className={saleInfoStyles.cta}>
                         <div className={`button--outside button-link`} onClick={props.show} style={{backgroundColor: props.color}}>

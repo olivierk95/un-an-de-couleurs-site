@@ -33,7 +33,7 @@ const Gallery = (props) => {
                     {cover.support ? 
                         <p className={`${galleryStyles.characteristics} text-small--white`}>{`J${cover.day}`}</p> :
                         <p className={`${galleryStyles.characteristics} text-small--white`}>
-                          {cover.cost_material && <>Prix libre</>}
+                          {cover.cost_material && "Prix libre"}
                           {cover.sale_price && `${cover.sale_price}€`}
                         </p>
                     }
@@ -47,7 +47,7 @@ const Gallery = (props) => {
                     {cover.support ? 
                       <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.title}</p> :
                       <p className={`${galleryStyles.characteristics} text-small--white`}>
-                        {cover.cost_material && <><span>Prix libre</span><br/><span>{`(coût du matériel: ${cover.cost_material}€)`}</span></>}
+                        {cover.cost_material && "Prix libre"}
                         {cover.sale_price && `${cover.sale_price}€`}
                       </p>
                     }

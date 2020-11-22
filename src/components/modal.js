@@ -12,7 +12,7 @@ const Modal = (props) => props.isShowing &&
                     <div className={modalStyles.success} >
                         <p className={modalStyles.iconText}>V</p>
                     </div>
-                    <p className="text-normal">{props.object === 'order' ? `La commande a correctement été soumise.` : `Le message s'est correctement envoyé.` }</p>
+                    <p className="text-normal">{props.object === 'order' ? `La commande a correctement été soumise. Merci pour votre soutien! Je vous contacterai très prochainement` : `Le message s'est correctement envoyé.` }</p>
                 </> :
                 <>
                     <div className={modalStyles.fail}>

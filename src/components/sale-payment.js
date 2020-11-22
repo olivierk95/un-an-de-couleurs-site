@@ -14,12 +14,16 @@ const SalePayment = (props) => props.isShowing &&
                 <hr className={`divider ${salePaymentStyles.divider}`} style={{borderColor: props.color}}/>
                 <div>
                     <p className='text-small--white'>{`Article: ${props.title}`}</p>
-                    <p className='text-small--white'>{`Prix: ${props.cost? `minimum ${props.cost}` : props.sale}€`}</p>
+                    <p className='text-small--white'>{`Prix: ${props.cost? `libre` : props.sale}€`}</p>
                 </div>
                 <hr className={`divider ${salePaymentStyles.divider}`} style={{borderColor: props.color}}/>
                 <form onSubmit={props.orderArticle}>
                     <input className="form-input text-form" style={{borderColor: props.color}} type="text" name="nom" value={props.nom} onChange={(e)=>props.setNom(e.target.value)} placeholder="Nom" required/>
-                    {props.cost && <input className="form-input text-form" style={{borderColor: props.color}} type="number" min={props.cost} name="prix" value={props.prix} onChange={(e)=>props.setPrix(e.target.value)} placeholder="Prix d'achat" required/>}
+                    {props.cost && 
+                        <>
+                            <p className='text-very-small--white'>Définissez vous-même votre prix d'achat en tenant compte du temps et du matériel recquis.</p>
+                            <input className="form-input text-form" style={{borderColor: props.color}} type="number" min={props.cost} name="prix" value={props.prix} onChange={(e)=>props.setPrix(e.target.value)} placeholder="Prix d'achat" required/>
+                        </>}
                     <input className="form-input text-form" style={{borderColor: props.color}} type="text" name="adresse" value={props.adresse} onChange={(e)=>props.setAdresse(e.target.value)} placeholder="Commune/adresse" required/>
                     <input className="form-input text-form" style={{borderColor: props.color}} type="email" name="mail" value={props.mail} onChange={(e)=>props.setMail(e.target.value)} placeholder="Adresse mail" required/>
                     <textarea className="form-input text-form" style={{borderColor: props.color}} name="message" value={props.message} onChange={(e)=>props.setMessage(e.target.value)} placeholder="Remarque éventuelle" />

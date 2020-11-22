@@ -138,6 +138,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         type StrapiArtworks implements Node {
             created_at: Date
             title: String
+            title_serie: String
             description: String
             technique: String
             support: String
