@@ -20,7 +20,7 @@ const Footer = () => {
                 </div>
                 <div className={footerStyles.contact}>
                     <div className={footerStyles.divcontainer}>
-                        <p className={footerStyles.subtitle}>M'accoster</p> 
+                        <p className={footerStyles.subtitle}>Me contacter</p> 
                         <p className="text-small--white">organik.artist@gmail.com</p>
                     </div>
                 </div>
