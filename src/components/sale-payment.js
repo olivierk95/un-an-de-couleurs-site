@@ -21,7 +21,7 @@ const SalePayment = (props) => props.isShowing &&
                     <input className="form-input text-form" style={{borderColor: props.color}} type="text" name="nom" value={props.nom} onChange={(e)=>props.setNom(e.target.value)} placeholder="Nom" required/>
                     {props.cost && 
                         <>
-                            <p className='text-very-small--white'>Définissez vous-même votre prix d'achat en tenant compte du temps et du matériel recquis.</p>
+                            <p className='text-very-small--white'>Définissez vous-même votre prix d'achat ci-dessous.</p>
                             <input className="form-input text-form" style={{borderColor: props.color}} type="number" min={props.cost} name="prix" value={props.prix} onChange={(e)=>props.setPrix(e.target.value)} placeholder="Prix d'achat" required/>
                         </>}
                     <input className="form-input text-form" style={{borderColor: props.color}} type="text" name="adresse" value={props.adresse} onChange={(e)=>props.setAdresse(e.target.value)} placeholder="Commune/adresse" required/>

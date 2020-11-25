@@ -180,7 +180,7 @@ export const pageQuery = graphql`
             boutique_cover {
                 publicURL
                 childImageSharp {
-                    fluid {
+                    fluid(quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -188,7 +188,7 @@ export const pageQuery = graphql`
             slider {
                 localFile {
                     childImageSharp {
-                        fluid {
+                        fluid(quality: 100) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -207,7 +207,7 @@ export const pageQuery = graphql`
             boutique_cover {
                 publicURL
                 childImageSharp {
-                    fluid {
+                    fluid(quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -215,7 +215,7 @@ export const pageQuery = graphql`
             slider {
                 localFile {
                     childImageSharp {
-                        fluid {
+                        fluid(quality: 100) {
                             ...GatsbyImageSharpFluid
                         }
                     }
