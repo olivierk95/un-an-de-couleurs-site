@@ -20,7 +20,7 @@ const SaleInfo = (props) => {
                 </>
             }
             <div className={saleInfoStyles.element}>
-                {props.cost && <p className="text-small">{`Prix libre (à vous de définir le prix qui vous semble juste)`}</p> }
+                {props.cost && <p className="text-small">{`Prix libre (à vous de définir votre prix)`}</p> }
                 {props.sale && <p className="text-small">{`${props.sale}€`}</p>}
                 {props.cost &&
                     <div className={saleInfoStyles.cta}>

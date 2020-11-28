@@ -14,7 +14,7 @@ const SalePayment = (props) => props.isShowing &&
                 <hr className={`divider ${salePaymentStyles.divider}`} style={{borderColor: props.color}}/>
                 <div>
                     <p className='text-small--white'>{`Article: ${props.title}`}</p>
-                    <p className='text-small--white'>{`Prix: ${props.cost? `libre` : props.sale}€`}</p>
+                    <p className='text-small--white'>{`Prix: ${props.cost? `libre` : `${props.sale}€`}`}</p>
                 </div>
                 <hr className={`divider ${salePaymentStyles.divider}`} style={{borderColor: props.color}}/>
                 <form onSubmit={props.orderArticle}>
