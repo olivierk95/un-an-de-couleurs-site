@@ -54,6 +54,15 @@ const Gallery = (props) => {
                 </div>
           </Link>
         )}
+        {props.j0 &&
+          <div className={`${galleryStyles.j0container} grid-column-1 grid-row-1`} >
+            <div className={`bg-color-cycle ${galleryStyles.j0}`}>
+              <h2 className={`${galleryStyles.title} h2-title`}>Jour 0</h2> 
+              <hr className="divider"/>
+              <p className={`${galleryStyles.characteristics} text-small--white`}>23.11.2020</p> 
+            </div>
+          </div>
+        }
     </>
   )
 }

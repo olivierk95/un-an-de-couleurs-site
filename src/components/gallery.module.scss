@@ -1,5 +1,6 @@
 @import "../styles/utils/variables";
 @import "../styles/vendors/mq";
+@import "../styles/utils/mixins";
 
 .title {
     text-align: center;
@@ -58,4 +59,18 @@
         transition: .3s $ease-in-quad;
         opacity: 0;
     }
+}
+
+.j0container {
+    @include aspect-ratio(1,1);
+}
+
+
+.j0 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-m;
 }

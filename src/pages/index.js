@@ -33,7 +33,10 @@ const IndexPage = () => {
     <Layout>
       <Head title="Galerie" />
       <section className="gallery-display">
-        <Gallery data={data.covers.nodes}/>
+        <Gallery 
+          data={data.covers.nodes}
+          j0={true}
+        />
       </section>
     </Layout>
   )
