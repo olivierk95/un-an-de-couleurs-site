@@ -20,7 +20,7 @@ module.exports = {
       options: {
         ////// PROBLEM this is the measurement ID instead of the tracking ID :'(
         // The property ID; the tracking code won't be generated without it
-        trackingId: "G-CQNTVZ24FY",
+        trackingId: "UA-183430005-1",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: true,
         // Setting this parameter is optional
