@@ -142,7 +142,7 @@ exports.createSchemaCustomization = ({ actions }) => {
             description: String
             technique: String
             support: String
-            sale_price: String
+            price_sale: String
             cost_material: String
             color: String
             galerie_cover: File
@@ -155,7 +155,7 @@ exports.createSchemaCustomization = ({ actions }) => {
             description: String
             technique: String
             support: String
-            sale_price: String
+            price_sale: String
             cost_material: String
             color: String
             boutique_cover: File

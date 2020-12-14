@@ -13,7 +13,7 @@ const BoutiquePage = () => {
             created_at
             title
             color
-            sale_price
+            price_sale
             cost_material
             boutique_cover {
               childImageSharp {
@@ -30,7 +30,7 @@ const BoutiquePage = () => {
             created_at
             title
             color
-            sale_price
+            price_sale
             cost_material
             boutique_cover {
               childImageSharp {

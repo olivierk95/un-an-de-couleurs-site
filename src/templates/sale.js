@@ -76,7 +76,7 @@ const Sale = ( {data} ) => {
             article: sale.title,
             nom,
             mail,
-            prix: sale.sale_price? sale.sale_price : prix,
+            prix: sale.price_sale? sale.price_sale : prix,
             adresse,
             message,
             'g-recaptcha-response': recaptchaRef.current.getValue()
@@ -105,7 +105,7 @@ const Sale = ( {data} ) => {
 
     return (
         <>
-            <Head title={sale.title} image={sale.boutique_cover.publicURL} description={`${sale.title}. ${sale.description && sale.description} ${sale.support} - ${sale.technique}. ${sale.sale_price || sale.cost_material}`} />
+            <Head title={sale.title} image={sale.boutique_cover.publicURL} description={`${sale.title}. ${sale.description && sale.description} ${sale.support} - ${sale.technique}. ${sale.price_sale || sale.cost_material}`} />
             <ExitButton url="/boutique" backgroundColor={sale.color} modifier={true} />
             <ArrowsNav previousSlug={previousPageSlug} previous={false} nextSlug={nextPageSlug} next={false} style={saleStyles.navigation} modifier={true} backgroundColor={sale.color} />
             <div className={saleStyles.body}>
@@ -135,7 +135,7 @@ const Sale = ( {data} ) => {
                                 status={sale.status}
                                 date={sale.date}
                                 cost={sale.cost_material}
-                                sale={sale.sale_price}
+                                sale={sale.price_sale}
                                 color={sale.color}
                                 css={saleStyles.desc}
                                 show={toggle}
@@ -145,7 +145,7 @@ const Sale = ( {data} ) => {
                     <SalePayment 
                         css={saleStyles.payment} 
                         orderArticle={orderArticle}cost={sale.cost_material} 
-                        sale={sale.sale_price} 
+                        sale={sale.price_sale} 
                         color={sale.color}
                         title={sale.title}
                         isShowing={isShowing}
@@ -175,7 +175,7 @@ export const pageQuery = graphql`
             technique
             description
             color
-            sale_price
+            price_sale
             cost_material
             boutique_cover {
                 publicURL
@@ -202,7 +202,7 @@ export const pageQuery = graphql`
             technique
             description
             color
-            sale_price
+            price_sale
             cost_material
             boutique_cover {
                 publicURL

@@ -34,7 +34,7 @@ const Gallery = (props) => {
                         <p className={`${galleryStyles.characteristics} text-small--white`}>{`J${cover.day}`}</p> :
                         <p className={`${galleryStyles.characteristics} text-small--white`}>
                           {cover.cost_material && "Prix libre"}
-                          {cover.sale_price && `${cover.sale_price}`}
+                          {cover.price_sale && `${cover.price_sale}`}
                         </p>
                     }
                 </div>
@@ -48,7 +48,7 @@ const Gallery = (props) => {
                       <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.title}</p> :
                       <p className={`${galleryStyles.characteristics} text-small--white`}>
                         {cover.cost_material && "Prix libre"}
-                        {cover.sale_price && `${cover.sale_price}`}
+                        {cover.price_sale && `${cover.price_sale}`}
                       </p>
                     }
                 </div>
