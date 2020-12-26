@@ -11,6 +11,7 @@ const IndexPage = () => {
           nodes {
             id
             day
+            date
             title
             support
             technique

@@ -27,32 +27,43 @@ const Gallery = (props) => {
   return (
     <>
         {props.data.map((cover) =>
-          <Link to={cover.day? `/jour-${cover.day}` : `/boutique/${string_to_slug(cover.title)}`} className={`${galleryStyles.container} grid-column-${cover.cover_width ? cover.cover_width : 1} grid-row-${cover.cover_height ? cover.cover_height : 1}`} key={cover.id}>
-                <Img className={galleryStyles.cover} fluid={cover.galerie_cover && cover.cover_width ? { ...cover.galerie_cover.childImageSharp.fluid, aspectRatio: cover.cover_width/cover.cover_height} : { ...cover.boutique_cover.childImageSharp.fluid, aspectRatio: 1/1}} alt={cover.title}/>
-                <div className={galleryStyles.caption} style={{backgroundColor: cover.color}}>
-                    {cover.support ? 
-                        <p className={`${galleryStyles.characteristics} text-small--white`}>{`J${cover.day}`}</p> :
+          <>
+            {parseInt(cover.date.substr(8,2)) === 22 &&
+              <div className={`${galleryStyles.j0container} grid-column-1 grid-row-1`} >
+                <div className={`bg-color-cycle ${galleryStyles.j0}`}>
+                  <h2 className={`${galleryStyles.title} h2-title`}>Mois {parseInt(cover.date.substr(5,2)) > 11 ? 1 : parseInt(cover.date.substr(5,2)) + 1 } ✔️</h2> 
+                  <hr className="divider"/>
+                  <p className={`${galleryStyles.characteristics} text-small--white`}>{`${parseInt(cover.date.substr(0,4))}-${parseInt(cover.date.substr(5,2))}-23`}</p> 
+                </div>
+              </div>
+            }
+            <Link to={cover.day? `/jour-${cover.day}` : `/boutique/${string_to_slug(cover.title)}`} className={`${galleryStyles.container} grid-column-${cover.cover_width ? cover.cover_width : 1} grid-row-${cover.cover_height ? cover.cover_height : 1}`} key={cover.id}>
+                  <Img className={galleryStyles.cover} fluid={cover.galerie_cover && cover.cover_width ? { ...cover.galerie_cover.childImageSharp.fluid, aspectRatio: cover.cover_width/cover.cover_height} : { ...cover.boutique_cover.childImageSharp.fluid, aspectRatio: 1/1}} objectPosition="50% 50%" alt={cover.title}/>
+                  <div className={galleryStyles.caption} style={{backgroundColor: cover.color}}>
+                      {cover.support ? 
+                          <p className={`${galleryStyles.characteristics} text-small--white`}>{`J${cover.day}`}</p> :
+                          <p className={`${galleryStyles.characteristics} text-small--white`}>
+                            {cover.cost_material && "Prix libre"}
+                            {cover.price_sale && `${cover.price_sale}`}
+                          </p>
+                      }
+                  </div>
+                  <div className={galleryStyles.info} style={{backgroundColor: cover.color}}>
+                      {cover.day ? 
+                        <h2 className={`${galleryStyles.title} h2-title`}>{`J${cover.day}`}</h2> :
+                        <h2 className={`${galleryStyles.title} h3-title`}>{cover.title}</h2>
+                      }
+                      <hr className="divider"/>
+                      {cover.support ? 
+                        <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.title}</p> :
                         <p className={`${galleryStyles.characteristics} text-small--white`}>
                           {cover.cost_material && "Prix libre"}
                           {cover.price_sale && `${cover.price_sale}`}
                         </p>
-                    }
-                </div>
-                <div className={galleryStyles.info} style={{backgroundColor: cover.color}}>
-                    {cover.day ? 
-                      <h2 className={`${galleryStyles.title} h2-title`}>{`J${cover.day}`}</h2> :
-                      <h2 className={`${galleryStyles.title} h3-title`}>{cover.title}</h2>
-                    }
-                    <hr className="divider"/>
-                    {cover.support ? 
-                      <p className={`${galleryStyles.characteristics} text-small--white`}>{cover.title}</p> :
-                      <p className={`${galleryStyles.characteristics} text-small--white`}>
-                        {cover.cost_material && "Prix libre"}
-                        {cover.price_sale && `${cover.price_sale}`}
-                      </p>
-                    }
-                </div>
-          </Link>
+                      }
+                  </div>
+            </Link>
+          </>
         )}
         {props.j0 &&
           <div className={`${galleryStyles.j0container} grid-column-1 grid-row-1`} >
