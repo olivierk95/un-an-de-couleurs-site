@@ -39,8 +39,8 @@ const Gallery = (props) => {
                 </div>
               : ""
             }
-            <Link to={cover.day? `/jour-${cover.day}` : `/boutique/${string_to_slug(cover.title)}`} className={`${galleryStyles.container} grid-column-${cover.cover_width ? cover.cover_width : 1} grid-row-${cover.cover_height ? cover.cover_height : 1}`} key={cover.id}>
-                  <Img className={galleryStyles.cover} fluid={cover.galerie_cover && cover.cover_width ? { ...cover.galerie_cover.childImageSharp.fluid, aspectRatio: cover.cover_width/cover.cover_height} : { ...cover.boutique_cover.childImageSharp.fluid, aspectRatio: 1/1}} objectPosition="50% 50%" alt={cover.title}/>
+            <Link to={cover.day? `/jour-${cover.day}` : `/boutique/${string_to_slug(cover.title)}`} className={`${galleryStyles.container} grid-column-${cover.cover_width ? cover.cover_width : cover.boutique_width} grid-row-${cover.cover_height ? cover.cover_height : cover.boutique_height}`} key={cover.id}>
+                  <Img className={galleryStyles.cover} fluid={cover.galerie_cover && cover.cover_width ? { ...cover.galerie_cover.childImageSharp.fluid, aspectRatio: cover.cover_width/cover.cover_height} : { ...cover.boutique_cover.childImageSharp.fluid, aspectRatio: cover.boutique_width/cover.boutique_height}} objectPosition="50% 50%" alt={cover.title}/>
                   <div className={galleryStyles.caption} style={{backgroundColor: cover.color}}>
                       {cover.support ? 
                           <p className={`${galleryStyles.characteristics} text-small--white`}>{`J${cover.day}`}</p> :
