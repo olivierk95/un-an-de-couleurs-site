@@ -112,7 +112,7 @@ const Sale = ( {data} ) => {
                 <ArtpieceSlider
                     css={saleStyles.slider} 
                     boutiquePic={sale.boutique_cover}
-                    galeriePic={data.artpiece.galerie_cover}
+                    galeriePic={sale.artpiece.galerie_cover}
                     sliderPics={sale.slider}
                     color={sale.color}
                     vertical={true}
@@ -126,7 +126,7 @@ const Sale = ( {data} ) => {
                         <div className={saleStyles.content}>
                             <ArtpieceImages 
                                 boutiquePic={sale.boutique_cover}
-                                galeriePic={data.artpiece.galerie_cover}
+                                galeriePic={sale.artpiece.galerie_cover}
                                 sliderPics={sale.slider}
                                 color={sale.color}
                             />
