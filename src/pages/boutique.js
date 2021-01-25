@@ -15,8 +15,8 @@ const BoutiquePage = () => {
             color
             price_sale
             cost_material
-            boutique_height
             boutique_width
+            boutique_height
             boutique_cover {
               childImageSharp {
                 fluid(maxHeight: 500, maxWidth: 500) {
@@ -34,11 +34,11 @@ const BoutiquePage = () => {
             color
             price_sale
             cost_material
-            boutique_height
             boutique_width
+            boutique_height
             boutique_cover {
               childImageSharp {
-                fluid(maxHeight: 500, maxWidth: 500) {
+                fluid(maxHeight: 1000, maxWidth: 1000) {
                   ...GatsbyImageSharpFluid
                 }
               }

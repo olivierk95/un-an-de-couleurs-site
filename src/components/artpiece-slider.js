@@ -13,10 +13,10 @@ const ArtpieceSlider = (props) => {
     const getSize = () => props.vertical? windowHeight : windowWidth;
 
     const slides = []; 
-    if (props.galeriePic) {
-        slides.push(props.galeriePic.childImageSharp.fluid);
-    } if (props.boutiquePic) {
+    if (props.boutiquePic) {
         slides.push(props.boutiquePic.childImageSharp.fluid);
+    } if (props.galeriePic) {
+        slides.push(props.galeriePic.childImageSharp.fluid);
     } if (props.sliderPics) {
         props.sliderPics.forEach( slidePic =>
             slides.push(slidePic.localFile.childImageSharp.fluid)

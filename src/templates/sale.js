@@ -112,6 +112,7 @@ const Sale = ( {data} ) => {
                 <ArtpieceSlider
                     css={saleStyles.slider} 
                     boutiquePic={sale.boutique_cover}
+                    galeriePic={data.artpiece.galerie_cover}
                     sliderPics={sale.slider}
                     color={sale.color}
                     vertical={true}
@@ -125,6 +126,7 @@ const Sale = ( {data} ) => {
                         <div className={saleStyles.content}>
                             <ArtpieceImages 
                                 boutiquePic={sale.boutique_cover}
+                                galeriePic={data.artpiece.galerie_cover}
                                 sliderPics={sale.slider}
                                 color={sale.color}
                             />
@@ -177,6 +179,14 @@ export const pageQuery = graphql`
             color
             price_sale
             cost_material
+            galerie_cover {
+                publicURL
+                childImageSharp {
+                    fluid(quality: 100) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
             boutique_cover {
                 publicURL
                 childImageSharp {
