@@ -16,11 +16,10 @@
 .container {
     overflow: hidden;
     display: grid;
-    grid-column: 1;
-    grid-row: 1;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
     text-decoration: none;
     position: relative;
-
 
     &:hover .info {
         transform: translateY(0);
