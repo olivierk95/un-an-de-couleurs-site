@@ -20,7 +20,7 @@ const IndexPage = () => {
             color
             galerie_cover {
               childImageSharp {
-                fluid(maxHeight: 1000, maxWidth: 1000) {
+                fluid {
                   ...GatsbyImageSharpFluid
                 }
               }

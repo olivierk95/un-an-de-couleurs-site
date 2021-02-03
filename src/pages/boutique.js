@@ -19,7 +19,7 @@ const BoutiquePage = () => {
             boutique_height
             boutique_cover {
               childImageSharp {
-                fluid(maxHeight: 500, maxWidth: 500) {
+                fluid {
                   ...GatsbyImageSharpFluid
                 }
               }

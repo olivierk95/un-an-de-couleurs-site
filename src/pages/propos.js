@@ -40,20 +40,20 @@ const ProposPage = () => {
                             <p className="text-normal">O-livier K-eutgens, alias O-rgani-K. Voilà d'où vient mon nom d'artiste que j'ai choisi à 13ans.</p>
                             <div className="paragraph-container">
                                 <h4 className="h3-title">Mon parcours atypique...</h4>
-                                <p className="text-normal">Originaire de Liège, j’y réalise un bachelier en sciences économiques et de gestion et un master en marketing à HEC-ULg. L'année qui suit mon diplôme (étant toujours à la recherche de ma vocation), je me lance dans une formation d’un an en développement web avec l’organisation Becode. Bien que très enrichissante (surtout dans le domaine de l’auto-apprentissage), je me sens toujours aussi désemparé, je décide alors de réaliser un rêve; partir plus d’un an à l’aventure en amérique centrale pour y développer des projets de manière bénévole. Une expérience qui m’a grandi sur le plan professionnel mais surtout sur le plan humain. Puis le covid est arrivé et a tout chamboulé: retour en Belgique prématuré sans réelle idée de quoi faire...
-                                <br/><br/>Ce projet a germé dans ma tête durant les longues heures d'attente à l'aéroport. C'est pour moi l'occasion de prendre au sérieux une passion que je n'ai jamais vraiment envisagée. A voir où cela me mènera</p>
+                                <p className="text-normal">Passionné de créations et de dessins depuis mon plus jeune âge, l’art urbain est très vite devenu une sorte de fantasme dans ma vie. Dès 13-14 ans, je choisis le blaze “OrganiK”, collectionne les livres de street art/graffiti et je réalise même mon TFE secondaire sur le sujet. Pourtant, je ne me suis jamais aventuré à passer le cap de la feuille.
+                                    Suite à une éducation assez “classique” dans un cocon familial très sécuritaire et me sentant un peu isolé dans ma passion (aucune connaissance aux aspirations similaires), je me lance dans des études en sciences économiques à HEC-ULg. J’y réalise un bachelier en sciences économiques et de gestion et un master en marketing à HEC-ULg. Pourtant, après avoir reçu mon diplôme je me ne me sens pas à ma place et pas du tout enclin à rechercher un métier dans ce domaine. Je commence une formation d’un an en développement web avec l’organisme Becode. Bien que très enrichissante (surtout dans le domaine de l’auto-apprentissage), je sens que passer mes journées sur un écran n’est pas fait pour moi, je décide alors de réaliser un rêve; partir plus d’un an à l’aventure en amérique centrale pour y développer des projets de manière bénévole. Une expérience qui m’a beaucoup apporté sur le plan professionnel mais surtout sur le plan humain et que j’aurai adoré poursuivre. Mais le covid est passé par là et a tout chamboulé: retour en Belgique prématuré sans projet concret…
+                                    <br/><br/>
+                                    Lors de mon aventure à l’étranger, j’en profite pour me rapprocher un peu plus de cette passion laissée au placard durant mes années d’études. Quelques fresques murales, des réalisations de t-shirts, un projet artistique super chouette avec des enfants dans une école du Guatemala, sont autant de réalisations qui restent de très bons souvenirs. C’est d’ailleurs pourquoi j’entreprend le projet "Un an de Couleurs" à mon retour en Belgique. Un peu comme un petit challenge personnel, je réalise quotidiennement des œuvres avec beaucoup de bonheur avec pour objectif d’apprendre et d’affiner mon style et ma technique durant un an (avec l’espoir caché d’en vivre partiellement ou complètement aussi).</p>
                             </div>
                             <div className="paragraph-container">
-                                <h4 className="h3-title">Mon style...</h4>
-                                <p className="text-normal">Je représente la vie, les humains, la nature, toute sorte d’être vivant en plus ou moins gros plan.<br/>
-                                J’abuse des couleurs dans le but d’apporter un peu de chaleur, tendresse ou poésie à mes oeuvres.<br/>
-                                J’utilise des traits/lignes propres (parfois d’autres éléments) qui s’entrecroisent pour donner vie aux illustrations.<br/>
-                                J’exprime des compositions graphiques simplistes.<br/>
-                                Mais au final, je me cherche encore et j’évolue au fil du temps.</p>
-                            </div>
-                            <div className="paragraph-container">
-                                <h4 className="h3-title">Mes maîtres mots...</h4>
-                                <p className="text-normal">Simplicité, générosité, empathie et amour.</p>
+                                <h4 className="h3-title">Ma démarche artistique</h4>
+                                <p className="text-normal">Je représente la vie, les humains, la nature, les animaux, toute sorte d’être vivant en plus ou moins gros plan. Je suis un amoureux du vivant dans son ensemble. J’adore observer la nature et m’y balader. J’y retrouve toute la fascination, la curiosité et l’innocence d’un enfant.<br/>
+                                    J’abuse des couleurs dans le but d’apporter un peu de chaleur et de multiculturalité à mes œuvres. J’espère apporter un sentiment de plénitude, d’amour et d’humanité aux gens qui y passent leur regard.<br/>
+                                    J’utilise des traits/lignes/formes qui s’entrecroisent pour donner vie aux illustrations. Les corps s'entremêlent dans un désordre organisé pour laisser place à la poésie de l’imaginaire et de la bienveillance.<br/>
+                                    Mon esthétique évolue et se “complexifie” petit à petit, mais c’est vers cela que je tends.<br/>
+                                    <br/><br/>
+                                    Je pense que mon style est un reflet de ma personnalité; quelqu’un de simple et d’idéaliste qui rêve de sauver le monde avec des coups de crayons.
+                                </p>
                             </div>
                         </div>
                     </div>
