@@ -34,7 +34,11 @@ const Gallery = (props) => {
                   <div className={`bg-color-cycle ${galleryStyles.j0}`}>
                     <h2 className={`${galleryStyles.title} h2-title`}>Mois {parseInt(cover.date.substr(5,2)) > 11 ? 1 : parseInt(cover.date.substr(5,2)) + 1 } ✔️</h2> 
                     <hr className="divider"/>
-                    <p className={`${galleryStyles.characteristics} text-small--white`}>{`${cover.date.substr(0,4)}-${cover.date.substr(5,2)}-23`}</p> 
+                    <p className={`${galleryStyles.characteristics} text-small--white`}>
+                        {`23.${cover.date.substr(5,2)}.${cover.date.substr(0,4)}`}
+                        <br/>
+                        Une œuvre / {parseInt(cover.date.substr(5,2)) > 0 ? "5 jours" : "jour" }
+                    </p> 
                   </div>
                 </div>
               : ""
@@ -72,7 +76,11 @@ const Gallery = (props) => {
             <div className={`bg-color-cycle ${galleryStyles.j0}`}>
               <h2 className={`${galleryStyles.title} h2-title`}>Jour 0</h2> 
               <hr className="divider"/>
-              <p className={`${galleryStyles.characteristics} text-small--white`}>23.11.2020</p> 
+              <p className={`${galleryStyles.characteristics} text-small--white`}>
+                  23.11.2020
+                  <br/>
+                  Une œuvre / jour
+                </p> 
             </div>
           </div>
         }
