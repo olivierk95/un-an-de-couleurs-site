@@ -35,7 +35,7 @@ const Gallery = (props) => {
                     <h2 className={`${galleryStyles.title} h2-title`}>Mois {parseInt(cover.date.substr(5,2)) > 11 ? 1 : parseInt(cover.date.substr(5,2)) + 1 } ✔️</h2> 
                     <hr className="divider"/>
                     <p className={`${galleryStyles.characteristics} text-small--white`}>
-                        Une œuvre / {parseInt(cover.date.substr(5,2)) > 2 ? "5 jours" : "jour" }
+                        Une œuvre / {parseInt(cover.date.substr(5,2)) > 2 && parseInt(cover.date.substr(5,2)) < 12 ? "5 jours" : "jour" }
                     </p> 
                   </div>
                 </div>
