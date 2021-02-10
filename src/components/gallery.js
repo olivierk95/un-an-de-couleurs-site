@@ -37,7 +37,7 @@ const Gallery = (props) => {
                     <p className={`${galleryStyles.characteristics} text-small--white`}>
                         {`23.${cover.date.substr(5,2)}.${cover.date.substr(0,4)}`}
                         <br/>
-                        Une œuvre / {parseInt(cover.date.substr(5,2)) > 0 ? "5 jours" : "jour" }
+                        Une œuvre / {parseInt(cover.date.substr(5,2)) > 2 ? "5 jours" : "jour" }
                     </p> 
                   </div>
                 </div>
