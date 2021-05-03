@@ -29,7 +29,7 @@ const ProposPage = () => {
                         <h2 className="font-color-cycle h1-title">Projet</h2>
                         <div>
                             <h3 className="font-color-cycle h2-title">Un an de quoi? C'est quoi cette histoire?</h3> 
-                            <p className="text-normal">Un an de COULEURS! En très résumé: un an où je me motive à peindre quotidienement (pour la forme, à défaut de faire du sport).
+                            <p className="text-normal">Un an de COULEURS! En très résumé: un an où je me motive à peindre quotidiennement (pour la forme, à défaut de faire du sport).
                             <br/><br/>
                             <b>Pour vous</b>, c’est l’occasion de découvrir mon univers, être témoin de mon évolution artistique au jour le jour et revoir un peu de couleurs après une année assez merdique.
                             <br/><br/>
