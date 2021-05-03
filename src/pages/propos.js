@@ -70,7 +70,7 @@ const ProposPage = () => {
                         <div className="content-container">
                             <h3 className="h3-title">M’avoir en peinture</h3>
                             <p className="text-normal">Ou plutôt si tu souhaites une oeuvre particulière pour toi, ton commerce ou une connaissance? Collaborons ensemble pour la réaliser.<br/>
-                            Quelques idées: caricature pour un anniversaire, fresque murale, personnalisation d’un objet ancien en objet d’art, réalisation d’une oeuvre personnel...</p>
+                            Quelques idées: caricature pour un anniversaire, fresque murale, personnalisation d’un objet ancien en objet d’art, réalisation d’une oeuvre personnelle...</p>
                         </div>
                         <div className="content-container">
                             <h3 className="h3-title">M’inspirer</h3>
