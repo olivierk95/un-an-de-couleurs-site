@@ -37,7 +37,7 @@ const ProposPage = () => {
                         </div>
                         <div className="content-container">
                             <h3 className="font-color-cycle h2-title">Organik? C’est qui ce pseudo-artiste au nom composté?</h3> 
-                            <p className="text-normal">O-livier K-eutgens, alias O-rgani-K. Voilà d'où vient mon nom d'artiste que j'ai choisi à 13ans.</p>
+                            <p className="text-normal">O-livier K-eutgens, alias O-rgani-K. Voilà d'où vient mon nom d'artiste que j'ai choisi à 13 ans.</p>
                             <div className="paragraph-container">
                                 <h4 className="h3-title">Mon parcours atypique...</h4>
                                 <p className="text-normal">Passionné de créations et de dessins depuis mon plus jeune âge, l’art urbain est très vite devenu une sorte de fantasme dans ma vie. Dès 13-14 ans, je choisis le blaze “OrganiK”, collectionne les livres de street art/graffiti et je réalise même mon TFE secondaire sur le sujet. 
