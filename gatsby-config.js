@@ -76,6 +76,7 @@ module.exports = {
       options: {
         apiURL: process.env.API_URL,
         contentTypes: [ `artworks`, `sales` ],
+        queryLimit: 1000,
       },
     },
     {
